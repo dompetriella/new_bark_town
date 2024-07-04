@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://8gu0gvdi85c"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_cn3pl"]
+[ext_resource type="Texture2D" uid="uid://b3hd186x8gicw" path="res://assets/pkmn_silver_characters.png" id="1_tvnuv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty63j"]
+atlas = ExtResource("1_tvnuv")
+region = Rect2(26, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70dvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty63j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnrvg"]
+size = Vector2(16, 15)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cn3pl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_70dvp")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_jnrvg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionRaycast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
