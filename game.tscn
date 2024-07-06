@@ -10,4 +10,4 @@
 [node name="Player Bedroom" parent="LevelContainer" instance=ExtResource("1_5qbtf")]
 
 [node name="Player" parent="LevelContainer" instance=ExtResource("2_vovxr")]
-position = Vector2(24, 72)
+position = Vector2(16, 69)
