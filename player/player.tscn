@@ -153,9 +153,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfy6x"]
 size = Vector2(12, 12)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("1_cn3pl")
-speed = 200
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -184,6 +183,6 @@ target_position = Vector2(-16, 0)
 
 [node name="PlayerArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_xfy6x")

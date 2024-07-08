@@ -1,8 +1,6 @@
 extends Node2D
 class_name Player
 
-@export var speed: int = 50;
-
 @onready var raycast_north: RayCast2D = get_node("%RaycastNorth");
 @onready var raycast_south: RayCast2D = get_node("%RaycastSouth");
 @onready var raycast_east: RayCast2D = get_node("%RaycastEast");
@@ -11,61 +9,65 @@ class_name Player
 
 const tile_size: int = 16;
 var is_moving: bool = false;
+var is_autonomous: bool = true;
 var input_direction: Vector2;
-
-func _ready() -> void:
-	pass;
 
 func _physics_process(delta: float) -> void:
 	input_direction = Vector2.ZERO;
-	
+	if (is_autonomous):
 	## Facing
-	if (Input.is_action_just_pressed("ui_up")):
-		input_direction = Vector2.UP;
-		player_sprite.play("face_up");
+		if (Input.is_action_just_pressed("ui_up")):
+			input_direction = Vector2.UP;
+			player_sprite.play("face_up");
+			
+		elif (Input.is_action_just_pressed("ui_down")):
+			input_direction = Vector2.DOWN;
+			player_sprite.play("face_down");
+			
+		elif (Input.is_action_just_pressed("ui_right")):
+			input_direction = Vector2.RIGHT;
+			player_sprite.play("face_right");
+			
+		elif (Input.is_action_just_pressed("ui_left")):
+			input_direction = Vector2.LEFT;
+			player_sprite.play("face_left");
 		
-	elif (Input.is_action_just_pressed("ui_down")):
-		input_direction = Vector2.DOWN;
-		player_sprite.play("face_down");
-		
-	elif (Input.is_action_just_pressed("ui_right")):
-		input_direction = Vector2.RIGHT;
-		player_sprite.play("face_right");
-		
-	elif (Input.is_action_just_pressed("ui_left")):
-		input_direction = Vector2.LEFT;
-		player_sprite.play("face_left");
-	
-	## Movement
-	elif ( Input.is_action_pressed("ui_up")):
-		input_direction = Vector2.UP;
-		player_sprite.play("walk_up");
-		move_character();
-	elif ( Input.is_action_pressed("ui_down")):
-		input_direction = Vector2.DOWN;
-		player_sprite.play("walk_down");
-		move_character();
-	elif (Input.is_action_pressed("ui_right")):
-		input_direction = Vector2.RIGHT
-		player_sprite.play("walk_right");
-		move_character();
-	elif (Input.is_action_pressed("ui_left")):
-		input_direction = Vector2.LEFT;
-		player_sprite.play("walk_left");
-		move_character();
+		## Movement
+		elif ( Input.is_action_pressed("ui_up")):
+			move_character(Vector2.UP, player_sprite);
+		elif ( Input.is_action_pressed("ui_down")):
+			move_character(Vector2.DOWN, player_sprite);
+			
+		elif (Input.is_action_pressed("ui_right")):
+			move_character(Vector2.RIGHT, player_sprite);
+			
+		elif (Input.is_action_pressed("ui_left")):
+			move_character(Vector2.LEFT, player_sprite);
 		
 
 
 
-func move_character() -> void:
-	if (input_direction): 
-		if (!is_moving && !will_collide_with_physics_object()):
+func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D) -> void:
+		match (input_direction):
+			Vector2.RIGHT:
+				player_sprite.play("walk_right"); 
+			Vector2.LEFT:
+				player_sprite.play("walk_left");
+			Vector2.UP:
+				player_sprite.play("walk_up");
+			Vector2.DOWN:
+				player_sprite.play("walk_down");
+			_:
+				pass;
+				
+				
+		if (!is_moving && !will_collide_with_physics_object(input_direction)):
 			is_moving = true;
 			var movement_tween: Tween = create_tween();
 			movement_tween.tween_property(self, "position", position + input_direction * tile_size, (0.2));
 			movement_tween.tween_callback(func(): is_moving = false);
 			
-func will_collide_with_physics_object() -> bool:
+func will_collide_with_physics_object(input_direction: Vector2) -> bool:
 	var will_collide = false;
 	if (input_direction == Vector2.UP && raycast_north.is_colliding()):
 		will_collide = true;
