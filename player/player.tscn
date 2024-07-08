@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://8gu0gvdi85c"]
+[gd_scene load_steps=16 format=3 uid="uid://8gu0gvdi85c"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_cn3pl"]
 [ext_resource type="Texture2D" uid="uid://b3hd186x8gicw" path="res://assets/pkmn_silver_characters.png" id="1_tvnuv"]
@@ -150,6 +150,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfy6x"]
+size = Vector2(12, 12)
+
 [node name="Player" type="Node2D"]
 script = ExtResource("1_cn3pl")
 speed = 200
@@ -178,3 +181,9 @@ target_position = Vector2(16, 0)
 [node name="RaycastWest" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(-16, 0)
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" groups=["Player"]]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_xfy6x")
