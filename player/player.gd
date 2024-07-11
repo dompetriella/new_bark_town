@@ -12,6 +12,13 @@ var is_moving: bool = false;
 var is_autonomous: bool = true;
 var input_direction: Vector2;
 
+func _ready() -> void:
+	Events.change_player_position.connect(change_player_position);
+
+func change_player_position(new_position: Vector2):
+	self.global_position = new_position;
+	print(new_position);
+
 func _physics_process(delta: float) -> void:
 	input_direction = Vector2.ZERO;
 	if (is_autonomous):
@@ -47,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 
 
-func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D) -> void:
+func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, external_position: Vector2 = Vector2.ZERO) -> void:
 		match (input_direction):
 			Vector2.RIGHT:
 				player_sprite.play("walk_right"); 
@@ -63,8 +70,14 @@ func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D) -
 				
 		if (!is_moving && !will_collide_with_physics_object(input_direction)):
 			is_moving = true;
+			var current_position: Vector2;
+			if (external_position == Vector2.ZERO):
+				current_position = self.global_position;
+			else:
+				current_position = external_position;
 			var movement_tween: Tween = create_tween();
-			movement_tween.tween_property(self, "position", position + input_direction * tile_size, (0.2));
+			
+			movement_tween.tween_property(self, "global_position", current_position + input_direction * tile_size, (0.2)).from_current();
 			movement_tween.tween_callback(func(): is_moving = false);
 			
 func will_collide_with_physics_object(input_direction: Vector2) -> bool:
