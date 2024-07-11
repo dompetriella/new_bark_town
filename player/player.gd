@@ -16,24 +16,24 @@ func _physics_process(delta: float) -> void:
 	input_direction = Vector2.ZERO;
 	if (is_autonomous):
 	## Facing
-		if (Input.is_action_just_pressed("ui_up")):
-			input_direction = Vector2.UP;
-			player_sprite.play("face_up");
-			
-		elif (Input.is_action_just_pressed("ui_down")):
-			input_direction = Vector2.DOWN;
-			player_sprite.play("face_down");
-			
-		elif (Input.is_action_just_pressed("ui_right")):
-			input_direction = Vector2.RIGHT;
-			player_sprite.play("face_right");
-			
-		elif (Input.is_action_just_pressed("ui_left")):
-			input_direction = Vector2.LEFT;
-			player_sprite.play("face_left");
+		#if (Input.is_action_just_pressed("ui_up")):
+			#input_direction = Vector2.UP;
+			#player_sprite.play("face_up");
+			#
+		#elif (Input.is_action_just_pressed("ui_down")):
+			#input_direction = Vector2.DOWN;
+			#player_sprite.play("face_down");
+			#
+		#elif (Input.is_action_just_pressed("ui_right")):
+			#input_direction = Vector2.RIGHT;
+			#player_sprite.play("face_right");
+			#
+		#elif (Input.is_action_just_pressed("ui_left")):
+			#input_direction = Vector2.LEFT;
+			#player_sprite.play("face_left");
 		
 		## Movement
-		elif ( Input.is_action_pressed("ui_up")):
+		if ( Input.is_action_pressed("ui_up")):
 			move_character(Vector2.UP, player_sprite);
 		elif ( Input.is_action_pressed("ui_down")):
 			move_character(Vector2.DOWN, player_sprite);
