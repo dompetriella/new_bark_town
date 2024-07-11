@@ -163,6 +163,7 @@ animation = &"walk_left"
 autoplay = "face_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+auto_translate_mode = 1
 zoom = Vector2(0.9, 0.9)
 
 [node name="RaycastSouth" type="RayCast2D" parent="."]

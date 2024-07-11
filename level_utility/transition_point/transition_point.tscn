@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://level_utility/transition_point/transition_point.gd" id="1_dlv3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xru6p"]
-size = Vector2(16, 16)
+size = Vector2(16, 2)
 
 [node name="TransitionPoint" type="Area2D"]
 script = ExtResource("1_dlv3s")
