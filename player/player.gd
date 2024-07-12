@@ -23,24 +23,24 @@ func _physics_process(delta: float) -> void:
 	input_direction = Vector2.ZERO;
 	if (is_autonomous):
 	## Facing
-		if (Input.is_action_just_pressed("ui_up")):
-			input_direction = Vector2.UP;
-			player_sprite.play("face_up");
-			
-		elif (Input.is_action_just_pressed("ui_down")):
-			input_direction = Vector2.DOWN;
-			player_sprite.play("face_down");
-			
-		elif (Input.is_action_just_pressed("ui_right")):
-			input_direction = Vector2.RIGHT;
-			player_sprite.play("face_right");
-			
-		elif (Input.is_action_just_pressed("ui_left")):
-			input_direction = Vector2.LEFT;
-			player_sprite.play("face_left");
+		#if (Input.is_action_just_pressed("ui_up")):
+			#input_direction = Vector2.UP;
+			#player_sprite.play("face_up");
+			#
+		#elif (Input.is_action_just_pressed("ui_down")):
+			#input_direction = Vector2.DOWN;
+			#player_sprite.play("face_down");
+			#
+		#elif (Input.is_action_just_pressed("ui_right")):
+			#input_direction = Vector2.RIGHT;
+			#player_sprite.play("face_right");
+			#
+		#elif (Input.is_action_just_pressed("ui_left")):
+			#input_direction = Vector2.LEFT;
+			#player_sprite.play("face_left");
 		
 		## Movement
-		elif ( Input.is_action_pressed("ui_up")):
+		if ( Input.is_action_pressed("ui_up")):
 			move_character(Vector2.UP, player_sprite);
 		elif ( Input.is_action_pressed("ui_down")):
 			move_character(Vector2.DOWN, player_sprite);
@@ -71,10 +71,10 @@ func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, u
 		if ((!is_moving && !will_collide_with_physics_object(input_direction)) || uses_external_position):
 			is_moving = true;
 			var current_position: Vector2;
-			if (external_position == Vector2.ZERO):
-				current_position = self.global_position;
-			else:
+			if (uses_external_position):
 				current_position = external_position;
+			else:
+				current_position = self.global_position;
 			var next_position = current_position + input_direction * tile_size;
 			var movement_tween: Tween = create_tween();
 			print("given external position: " + str(external_position));

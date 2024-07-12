@@ -1,6 +1,23 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ceqtrja0wd5r2"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ceqtrja0wd5r2"]
 
 [ext_resource type="Texture2D" uid="uid://fisjwqjenvsq" path="res://assets/pokemon_silver_objects.png" id="1_k2g03"]
+[ext_resource type="Texture2D" uid="uid://c026j7jbv8x16" path="res://assets/animated_sprites/pokemon_silver_water_animated.png" id="1_vko17"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sre3n"]
+resource_name = "animated_water"
+texture = ExtResource("1_vko17")
+separation = Vector2i(1, 0)
+texture_region_size = Vector2i(8, 8)
+0:0/animation_columns = 7
+0:0/animation_frame_0/duration = 0.33
+0:0/animation_frame_1/duration = 0.33
+0:0/animation_frame_2/duration = 0.33
+0:0/animation_frame_3/duration = 0.33
+0:0/animation_frame_4/duration = 0.33
+0:0/animation_frame_5/duration = 0.33
+0:0/animation_frame_6/duration = 0.33
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3n14"]
 texture = ExtResource("1_k2g03")
@@ -345,3 +362,4 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_c3n14")
+sources/0 = SubResource("TileSetAtlasSource_sre3n")

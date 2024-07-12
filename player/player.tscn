@@ -159,7 +159,7 @@ script = ExtResource("1_cn3pl")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_70dvp")
-animation = &"walk_left"
+animation = &"walk_up"
 autoplay = "face_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
