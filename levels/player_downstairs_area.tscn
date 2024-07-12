@@ -28,3 +28,6 @@ end_point_coordinates = Vector2(192, 35)
 position = Vector2(80, 135)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(192, 35)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(64, 136)

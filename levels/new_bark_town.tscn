@@ -22,5 +22,5 @@ gizmo_extents = 8.0
 [node name="NewBarkTown_PlayerDownstairs" parent="." instance=ExtResource("3_etyjp")]
 position = Vector2(192, 34)
 next_scene_path = "res://levels/player_downstairs_area.tscn"
-end_point_coordinates = Vector2(1, 1)
+end_point_coordinates = Vector2(64, 132)
 direction_after_transition = 2

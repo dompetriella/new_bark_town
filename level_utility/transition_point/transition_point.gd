@@ -29,23 +29,16 @@ func move_player_after_transition(new_coordinates: Vector2, direction_after_tran
 	var player: Player = get_tree().get_first_node_in_group("Player");
 	var player_sprite: AnimatedSprite2D = player.get_node("%PlayerSprite");
 	player.is_autonomous = false;
-	player.global_position = end_point_coordinates;
+	player.global_position = new_coordinates;
 	player.is_moving = false;
-	
 	var vector_direction: Vector2 = Vector2.ZERO;
-	match direction_after_transition:
-		MovementDirection.UP:
-			vector_direction = Vector2.UP;
-		MovementDirection.DOWN:
-			vector_direction = Vector2.DOWN;
-		MovementDirection.RIGHT:
-			vector_direction = Vector2.RIGHT;
-		MovementDirection.LEFT:
-			vector_direction = Vector2.LEFT;
-		_:
-			print("Unexpected direction: ", direction_after_transition)
+	if (direction_after_transition == MovementDirection.UP):
+		vector_direction = Vector2.UP;
+	if (direction_after_transition == MovementDirection.DOWN):
+		vector_direction = Vector2.DOWN;
 	
-	player.move_character(vector_direction, player_sprite, end_point_coordinates);
+	print("Moving in direction: " + str(vector_direction));
+	await player.move_character(vector_direction, player_sprite, true, end_point_coordinates);
 	
 	await get_tree().create_timer(0.5).timeout;
 	player.is_moving = false
