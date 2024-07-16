@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ui02kaxgj65v" path="res://assets/npc/professor_elm.tres" id="2_a8431"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0di5"]
-size = Vector2(16, 10)
+size = Vector2(16, 13)
 
 [node name="Area2D" type="CharacterBody2D"]
 script = ExtResource("1_rydlh")
@@ -14,4 +14,5 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("2_a8431")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_v0di5")

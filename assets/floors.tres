@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bimeagekenpwb"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bimeagekenpwb"]
 
 [ext_resource type="Texture2D" uid="uid://fisjwqjenvsq" path="res://assets/pokemon_silver_objects.png" id="1_j536d"]
+[ext_resource type="Texture2D" uid="uid://du1nb2q4f3a5n" path="res://assets/animated_sprites/animated_flower_sprite.png" id="2_8pjxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg2bf"]
 texture = ExtResource("1_j536d")
@@ -56,6 +57,16 @@ texture_region_size = Vector2i(8, 8)
 35:29/0 = 0
 34:29/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ix282"]
+texture = ExtResource("2_8pjxs")
+separation = Vector2i(1, 0)
+texture_region_size = Vector2i(8, 8)
+0:0/animation_speed = 2.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+
 [resource]
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_jg2bf")
+sources/1 = SubResource("TileSetAtlasSource_ix282")

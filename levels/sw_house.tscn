@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://bg557gq0b5367"]
+[gd_scene load_steps=6 format=4 uid="uid://bg557gq0b5367"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_grg27"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_2fkay"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_jmilj"]
+[ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_hoklm"]
+[ext_resource type="SpriteFrames" uid="uid://cfuchcw3b4fbv" path="res://assets/npc/ponytail_girl.tres" id="5_4pvi8"]
 
 [node name="SwHouse" type="Node2D"]
 
@@ -23,3 +25,7 @@ end_point_coordinates = Vector2(32, 131)
 position = Vector2(56, 119)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(32, 131)
+
+[node name="PonytailGirl" parent="." instance=ExtResource("4_hoklm")]
+position = Vector2(40, 38)
+spriteFrames = ExtResource("5_4pvi8")

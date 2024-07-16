@@ -32,5 +32,5 @@ position = Vector2(24, 71)
 spriteFrames = ExtResource("5_k0i8m")
 
 [node name="Darkhairkid" parent="." instance=ExtResource("4_042p4")]
-position = Vector2(88, 54)
+position = Vector2(88, 53)
 spriteFrames = ExtResource("6_pxu6v")
