@@ -39,3 +39,6 @@ direction_after_transition = 2
 
 [node name="NewBarkTown_SWHouse" parent="." instance=ExtResource("3_etyjp")]
 position = Vector2(32, 130)
+next_scene_path = "res://levels/sw_house.tscn"
+end_point_coordinates = Vector2(40, 119)
+direction_after_transition = 2
