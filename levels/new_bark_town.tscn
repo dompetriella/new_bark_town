@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=4 uid="uid://c2tsdi4yhfyns"]
+[gd_scene load_steps=8 format=4 uid="uid://c2tsdi4yhfyns"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_bwr7v"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_ddxtu"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_etyjp"]
+[ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_a1bud"]
+[ext_resource type="SpriteFrames" uid="uid://b345wfls8bdx2" path="res://assets/npc/fat_boy.tres" id="5_cpxop"]
+[ext_resource type="SpriteFrames" uid="uid://cstva0ila3ogx" path="res://assets/npc/headband_lady.tres" id="6_4yjty"]
+[ext_resource type="SpriteFrames" uid="uid://csocqqvyjlvi" path="res://assets/npc/rival.tres" id="7_lbtwb"]
 
 [node name="NewBarkTown" type="Node2D"]
 
@@ -42,3 +46,15 @@ position = Vector2(32, 130)
 next_scene_path = "res://levels/sw_house.tscn"
 end_point_coordinates = Vector2(40, 119)
 direction_after_transition = 2
+
+[node name="FatBoyNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
+position = Vector2(176, 83)
+spriteFrames = ExtResource("5_cpxop")
+
+[node name="HeadbandLadyNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
+position = Vector2(80, 83)
+spriteFrames = ExtResource("6_4yjty")
+
+[node name="RivalNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
+position = Vector2(32, -10)
+spriteFrames = ExtResource("7_lbtwb")

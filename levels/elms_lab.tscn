@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://cmn0t6gmelbqc"]
+[gd_scene load_steps=6 format=4 uid="uid://cmn0t6gmelbqc"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_fnno6"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_s54pc"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_xuh4r"]
+[ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_yubfd"]
+[ext_resource type="SpriteFrames" uid="uid://ui02kaxgj65v" path="res://assets/npc/professor_elm.tres" id="5_t2xv5"]
 
 [node name="ElmsLab" type="Node2D"]
 
@@ -23,3 +25,9 @@ end_point_coordinates = Vector2(80, 3)
 position = Vector2(88, 183)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(80, 3)
+
+[node name="Elm" parent="." instance=ExtResource("4_yubfd")]
+position = Vector2(88, 24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elm"]
+sprite_frames = ExtResource("5_t2xv5")

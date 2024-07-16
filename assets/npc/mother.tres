@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://csvrh0fsfcv5l"]
+
+[ext_resource type="Texture2D" uid="uid://b3hd186x8gicw" path="res://assets/pkmn_silver_characters.png" id="1_6vp8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c60n"]
+atlas = ExtResource("1_6vp8s")
+region = Rect2(77, 187, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c60n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
