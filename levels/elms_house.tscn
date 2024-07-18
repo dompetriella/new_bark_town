@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_cqw0a"]
 [ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_042p4"]
 [ext_resource type="SpriteFrames" uid="uid://cstva0ila3ogx" path="res://assets/npc/headband_lady.tres" id="5_k0i8m"]
-[ext_resource type="SpriteFrames" uid="uid://4271vw31v084" path="res://assets/npc/darkhair_kid.tres" id="6_pxu6v"]
+[ext_resource type="SpriteFrames" uid="uid://dsaqt2867pytu" path="res://assets/npc/darkhair_kid.tres" id="6_pxu6v"]
 
 [node name="ElmsHouse" type="Node2D"]
 

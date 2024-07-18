@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*res://events.gd"
 Globals="*res://globals.gd"
+BackgroundMusic="*res://level_utility/background_music/background_music.gd"
 
 [display]
 
