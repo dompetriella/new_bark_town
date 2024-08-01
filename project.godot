@@ -32,6 +32,7 @@ window/stretch/scale=5.0
 [layer_names]
 
 2d_physics/layer_1="PlayerLayer"
+2d_physics/layer_2="InteractionLayer"
 
 [rendering]
 

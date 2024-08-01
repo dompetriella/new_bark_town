@@ -166,19 +166,19 @@ autoplay = "face_down"
 auto_translate_mode = 1
 zoom = Vector2(0.9, 0.9)
 
-[node name="RaycastSouth" type="RayCast2D" parent="."]
+[node name="CollisionRaycastSouth" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(0, 16)
 
-[node name="RaycastNorth" type="RayCast2D" parent="."]
+[node name="CollisionRaycastNorth" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(0, -16)
 
-[node name="RaycastEast" type="RayCast2D" parent="."]
+[node name="CollisionRaycastEast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(16, 0)
 
-[node name="RaycastWest" type="RayCast2D" parent="."]
+[node name="CollisionRaycastWest" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(-16, 0)
 
@@ -187,3 +187,31 @@ target_position = Vector2(-16, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_xfy6x")
+
+[node name="InteractiveRaycastNorth" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(0, -16)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="InteractiveRaycastSouth" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(0, 16)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="InteractiveRaycastWest" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(-15, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="InteractiveRaycastEast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(16, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

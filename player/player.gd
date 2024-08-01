@@ -1,10 +1,14 @@
 extends Node2D
 class_name Player
 
-@onready var raycast_north: RayCast2D = get_node("%RaycastNorth");
-@onready var raycast_south: RayCast2D = get_node("%RaycastSouth");
-@onready var raycast_east: RayCast2D = get_node("%RaycastEast");
-@onready var raycast_west: RayCast2D = get_node("%RaycastWest");
+@onready var raycast_north: RayCast2D = get_node("%CollisionRaycastNorth");
+@onready var raycast_south: RayCast2D = get_node("%CollisionRaycastSouth");
+@onready var raycast_east: RayCast2D = get_node("%CollisionRaycastEast");
+@onready var raycast_west: RayCast2D = get_node("%CollisionRaycastWest");
+@onready var interactive_raycast_north: RayCast2D = get_node("%InteractiveRaycastNorth");
+@onready var interactive_raycast_south: RayCast2D = get_node("%InteractiveRaycastSouth");
+@onready var interactive_raycast_east: RayCast2D = get_node("%InteractiveRaycastEast");
+@onready var interactive_raycast_west: RayCast2D = get_node("%InteractiveRaycastWest");
 @onready var player_sprite: AnimatedSprite2D = get_node("%PlayerSprite");
 
 const tile_size: int = 16;
@@ -15,7 +19,7 @@ var player_facing_raycast: RayCast2D;
 
 func _ready() -> void:
 	Events.change_player_position.connect(change_player_position);
-	player_facing_raycast = raycast_south;
+	player_facing_raycast = interactive_raycast_south;
 
 func change_player_position(new_position: Vector2):
 	self.global_position = new_position;
@@ -44,16 +48,16 @@ func _physics_process(delta: float) -> void:
 		## Movement
 		if ( Input.is_action_pressed("ui_up")):
 			move_character(Vector2.UP, player_sprite);
-			player_facing_raycast = raycast_north;
+			player_facing_raycast = interactive_raycast_north;
 		elif ( Input.is_action_pressed("ui_down")):
 			move_character(Vector2.DOWN, player_sprite);
-			player_facing_raycast = raycast_south;
+			player_facing_raycast = interactive_raycast_south;
 		elif (Input.is_action_pressed("ui_right")):
 			move_character(Vector2.RIGHT, player_sprite);
-			player_facing_raycast = raycast_east;
+			player_facing_raycast = interactive_raycast_east;
 		elif (Input.is_action_pressed("ui_left")):
 			move_character(Vector2.LEFT, player_sprite);
-			player_facing_raycast = raycast_west;
+			player_facing_raycast = interactive_raycast_west;
 			
 	if (Input.is_action_just_pressed("ui_select") && !is_moving):
 		if (Globals.interactive_area_component != null):
