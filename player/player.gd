@@ -11,9 +11,11 @@ const tile_size: int = 16;
 var is_moving: bool = false;
 var is_autonomous: bool = true;
 var input_direction: Vector2;
+var player_facing_raycast: RayCast2D;
 
 func _ready() -> void:
 	Events.change_player_position.connect(change_player_position);
+	player_facing_raycast = raycast_south;
 
 func change_player_position(new_position: Vector2):
 	self.global_position = new_position;
@@ -42,17 +44,26 @@ func _physics_process(delta: float) -> void:
 		## Movement
 		if ( Input.is_action_pressed("ui_up")):
 			move_character(Vector2.UP, player_sprite);
+			player_facing_raycast = raycast_north;
 		elif ( Input.is_action_pressed("ui_down")):
 			move_character(Vector2.DOWN, player_sprite);
-			
+			player_facing_raycast = raycast_south;
 		elif (Input.is_action_pressed("ui_right")):
 			move_character(Vector2.RIGHT, player_sprite);
-			
+			player_facing_raycast = raycast_east;
 		elif (Input.is_action_pressed("ui_left")):
 			move_character(Vector2.LEFT, player_sprite);
-		
-
-
+			player_facing_raycast = raycast_west;
+			
+	if (Input.is_action_just_pressed("ui_select") && !is_moving):
+		if (Globals.interactive_area_component != null):
+			print(Globals.interactive_area_component.name);
+	
+	if (player_facing_raycast.is_colliding()):
+		var collider: Node2D = player_facing_raycast.get_collider();
+		if (collider is InteractiveAreaComponent):
+			Globals.interactive_area_component = collider;
+				
 
 func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, uses_external_position: bool = false, external_position: Vector2 = Vector2.ZERO) -> void:
 		match (input_direction):
@@ -82,6 +93,7 @@ func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, u
 			print("moving to: " + str(next_position) + "\n");
 			movement_tween.tween_property(self, "global_position", next_position, (0.2)).from_current();
 			movement_tween.tween_callback(func(): is_moving = false);
+			
 			
 func will_collide_with_physics_object(input_direction: Vector2) -> bool:
 	var will_collide = false;

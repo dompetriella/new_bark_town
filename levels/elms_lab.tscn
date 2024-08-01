@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cmn0t6gmelbqc"]
+[gd_scene load_steps=8 format=4 uid="uid://cmn0t6gmelbqc"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_fnno6"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_s54pc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_yubfd"]
 [ext_resource type="SpriteFrames" uid="uid://ui02kaxgj65v" path="res://assets/npc/professor_elm.tres" id="5_t2xv5"]
 [ext_resource type="SpriteFrames" uid="uid://chqh3qqoysrf3" path="res://assets/npc/lab_assistant.tres" id="6_25vr2"]
+[ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="6_smwsq"]
 
 [node name="ElmsLab" type="Node2D"]
 
@@ -30,6 +31,9 @@ end_point_coordinates = Vector2(80, 3)
 [node name="Elm" parent="." instance=ExtResource("4_yubfd")]
 position = Vector2(88, 24)
 spriteFrames = ExtResource("5_t2xv5")
+
+[node name="InteractiveAreaComponent" parent="Elm" instance=ExtResource("6_smwsq")]
+visible = false
 
 [node name="LabAssistant" parent="." instance=ExtResource("4_yubfd")]
 position = Vector2(40, 135)

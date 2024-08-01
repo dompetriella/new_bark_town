@@ -1,3 +1,4 @@
+class_name Npc
 extends Node2D
 
 @export var spriteFrames: SpriteFrames;
