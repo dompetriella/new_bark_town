@@ -19,17 +19,17 @@ region = Rect2(145, 34, 16, 16)
 atlas = ExtResource("1_tvnuv")
 region = Rect2(77, 34, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmh12"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ma0t"]
 atlas = ExtResource("1_tvnuv")
-region = Rect2(9, 34, 16, 16)
+region = Rect2(43, 34, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6dq7"]
 atlas = ExtResource("1_tvnuv")
 region = Rect2(26, 34, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ma0t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmh12"]
 atlas = ExtResource("1_tvnuv")
-region = Rect2(43, 34, 16, 16)
+region = Rect2(9, 34, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q7tb"]
 atlas = ExtResource("1_tvnuv")
@@ -83,28 +83,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hmh12")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s6dq7")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_2ma0t")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s6dq7")
 }],
 "loop": false,
-"name": &"walk_down",
-"speed": 7.0
+"name": &"walk_down_left_arm",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8q7tb")
+"texture": SubResource("AtlasTexture_hmh12")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_273nq")
+"texture": SubResource("AtlasTexture_s6dq7")
+}],
+"loop": false,
+"name": &"walk_down_right_arm",
+"speed": 6.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8q7tb")
 }, {
@@ -113,15 +112,9 @@ animations = [{
 }],
 "loop": false,
 "name": &"walk_left",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1g3tk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dw8kp")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1g3tk")
 }, {
@@ -130,7 +123,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"walk_right",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,7 +131,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_238he")
+}],
+"loop": false,
+"name": &"walk_up_left_arm",
+"speed": 6.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8xakj")
 }, {
@@ -146,8 +144,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_238he")
 }],
 "loop": false,
-"name": &"walk_up",
-"speed": 7.0
+"name": &"walk_up_right_arm",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfy6x"]
@@ -159,7 +157,7 @@ script = ExtResource("1_cn3pl")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_70dvp")
-animation = &"walk_up"
+animation = &"walk_right"
 autoplay = "face_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]

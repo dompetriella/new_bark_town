@@ -13,6 +13,7 @@ class_name Player
 
 const tile_size: int = 16;
 var is_moving: bool = false;
+var movement_animation_uses_right_arm: bool = true;
 var is_autonomous: bool = true;
 var input_direction: Vector2;
 var player_facing_raycast: RayCast2D;
@@ -70,34 +71,44 @@ func _physics_process(delta: float) -> void:
 				
 
 func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, uses_external_position: bool = false, external_position: Vector2 = Vector2.ZERO) -> void:
-		match (input_direction):
-			Vector2.RIGHT:
-				player_sprite.play("walk_right"); 
-			Vector2.LEFT:
-				player_sprite.play("walk_left");
-			Vector2.UP:
-				player_sprite.play("walk_up");
-			Vector2.DOWN:
-				player_sprite.play("walk_down");
-			_:
-				pass;
-				
-				
-		if ((!is_moving && !will_collide_with_physics_object(input_direction)) || uses_external_position):
-			is_moving = true;
-			var current_position: Vector2;
-			if (uses_external_position):
-				current_position = external_position;
+
+	match (input_direction):
+		Vector2.RIGHT:
+			player_sprite.play("walk_right"); 
+		Vector2.LEFT:
+			player_sprite.play("walk_left");
+		Vector2.UP:
+			if (movement_animation_uses_right_arm):
+				player_sprite.play("walk_up_right_arm");
 			else:
-				current_position = self.global_position;
-			var next_position = current_position + input_direction * tile_size;
-			var movement_tween: Tween = create_tween();
-			print("given external position: " + str(external_position));
-			print("current position: " + str(current_position) );
-			print("moving to: " + str(next_position) + "\n");
-			movement_tween.tween_property(self, "global_position", next_position, (0.2)).from_current();
-			movement_tween.tween_callback(func(): is_moving = false);
+				player_sprite.play("walk_up_left_arm");
+		Vector2.DOWN:
+			if (movement_animation_uses_right_arm):
+				player_sprite.play("walk_down_right_arm");
+			else:
+				player_sprite.play("walk_down_left_arm");
+		_:
+				pass;
 			
+			
+	if ((!is_moving && !will_collide_with_physics_object(input_direction)) || uses_external_position):
+		is_moving = true;
+		var current_position: Vector2;
+		if (uses_external_position):
+			current_position = external_position;
+		else:
+			current_position = self.global_position;
+		var next_position = current_position + input_direction * tile_size;
+		var movement_tween: Tween = create_tween();
+		print("given external position: " + str(external_position));
+		print("current position: " + str(current_position) );
+		print("moving to: " + str(next_position) + "\n");
+		movement_tween.tween_property(self, "global_position", next_position, (0.22)).from_current();
+		movement_tween.tween_callback(func(): 
+			is_moving = false
+			movement_animation_uses_right_arm = !movement_animation_uses_right_arm;
+		);
+
 			
 func will_collide_with_physics_object(input_direction: Vector2) -> bool:
 	var will_collide = false;
