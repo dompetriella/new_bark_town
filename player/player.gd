@@ -60,14 +60,12 @@ func _physics_process(delta: float) -> void:
 			move_character(Vector2.LEFT, player_sprite);
 			player_facing_raycast = interactive_raycast_west;
 			
-	if (Input.is_action_just_pressed("ui_select") && !is_moving):
-		if (Globals.interactive_area_component != null):
-			print(Globals.interactive_area_component.name);
-	
-	if (player_facing_raycast.is_colliding()):
-		var collider: Node2D = player_facing_raycast.get_collider();
+	if (Input.is_action_just_pressed("ui_select") && !is_moving && player_facing_raycast.is_colliding()):
+		var collider:  Node2D = player_facing_raycast.get_collider();
 		if (collider is InteractiveAreaComponent):
-			Globals.interactive_area_component = collider;
+			if (collider.dialogue_resource != null):
+				DialogueManager.show_dialogue_balloon(collider.dialogue_resource, "start");
+
 				
 
 func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, uses_external_position: bool = false, external_position: Vector2 = Vector2.ZERO) -> void:
@@ -109,6 +107,7 @@ func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, u
 			movement_animation_uses_right_arm = !movement_animation_uses_right_arm;
 		);
 
+	
 			
 func will_collide_with_physics_object(input_direction: Vector2) -> bool:
 	var will_collide = false;

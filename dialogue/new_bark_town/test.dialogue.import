@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b1c2w5ffkqsv0"
+path="res://.godot/imported/test.dialogue-c6779d12ed861c79db86d56f82ad03f8.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/test.dialogue"
+dest_files=["res://.godot/imported/test.dialogue-c6779d12ed861c79db86d56f82ad03f8.tres"]
+
+[params]
+
+defaults=true

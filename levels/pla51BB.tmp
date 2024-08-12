@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://cnkywygy0dn7r"]
+[gd_scene load_steps=9 format=4 uid="uid://cnkywygy0dn7r"]
 
 [ext_resource type="Texture2D" uid="uid://fisjwqjenvsq" path="res://assets/pokemon_silver_objects.png" id="1_xo2yx"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="2_fw28w"]
-[ext_resource type="Resource" uid="uid://cudreh04es1o2" path="res://dialogue/new_bark_town/computer.dialogue" id="3_ric6y"]
-[ext_resource type="Resource" uid="uid://ccutnmkqi87rg" path="res://dialogue/new_bark_town/tv.dialogue" id="3_wfqrj"]
+[ext_resource type="Resource" uid="uid://b1c2w5ffkqsv0" path="res://dialogue/new_bark_town/test.dialogue" id="3_74lrk"]
 [ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="3_whtal"]
-[ext_resource type="Resource" uid="uid://bsdj4kw6fnxu0" path="res://dialogue/new_bark_town/radio.dialogue" id="4_erqk2"]
-[ext_resource type="Resource" uid="uid://bvu3drg652mje" path="res://dialogue/new_bark_town/bookshelf.dialogue" id="6_br4d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg2bf"]
 texture = ExtResource("1_xo2yx")
@@ -172,19 +169,16 @@ tile_set = SubResource("TileSet_uk14s")
 
 [node name="ComputerInteraction" parent="." instance=ExtResource("3_whtal")]
 position = Vector2(32, 24)
-dialogue_resource = ExtResource("3_ric6y")
+dialogue_resource = ExtResource("3_74lrk")
 
 [node name="RadioInteraction" parent="." instance=ExtResource("3_whtal")]
 position = Vector2(48, 24)
-dialogue_resource = ExtResource("4_erqk2")
 
 [node name="TVInteraction" parent="." instance=ExtResource("3_whtal")]
 position = Vector2(64, 24)
-dialogue_resource = ExtResource("3_wfqrj")
 
 [node name="BookshelfInteraction" parent="." instance=ExtResource("3_whtal")]
 position = Vector2(80, 24)
-dialogue_resource = ExtResource("6_br4d2")
 
 [node name="Bedroom_Downstairs" parent="." instance=ExtResource("2_fw28w")]
 position = Vector2(112, 3)

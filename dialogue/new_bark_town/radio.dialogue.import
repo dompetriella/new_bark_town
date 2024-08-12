@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bsdj4kw6fnxu0"
+path="res://.godot/imported/radio.dialogue-d7ebb5e18aa42fd246b242db8eb00965.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/radio.dialogue"
+dest_files=["res://.godot/imported/radio.dialogue-d7ebb5e18aa42fd246b242db8eb00965.tres"]
+
+[params]
+
+defaults=true
