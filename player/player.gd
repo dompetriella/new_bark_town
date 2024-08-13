@@ -15,11 +15,13 @@ const tile_size: int = 16;
 var is_moving: bool = false;
 var movement_animation_uses_right_arm: bool = true;
 var is_autonomous: bool = true;
+var is_in_menu: bool = false;
 var input_direction: Vector2;
 var player_facing_raycast: RayCast2D;
 
 func _ready() -> void:
 	Events.change_player_position.connect(change_player_position);
+	DialogueManager.dialogue_ended.connect(func(resource): is_in_menu = false);
 	player_facing_raycast = interactive_raycast_south;
 
 func change_player_position(new_position: Vector2):
@@ -28,7 +30,7 @@ func change_player_position(new_position: Vector2):
 
 func _physics_process(delta: float) -> void:
 	input_direction = Vector2.ZERO;
-	if (is_autonomous):
+	if (is_autonomous && !is_in_menu):
 	## Facing
 		#if (Input.is_action_just_pressed("ui_up")):
 			#input_direction = Vector2.UP;
@@ -63,8 +65,10 @@ func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_select") && !is_moving && player_facing_raycast.is_colliding()):
 		var collider:  Node2D = player_facing_raycast.get_collider();
 		if (collider is InteractiveAreaComponent):
-			if (collider.dialogue_resource != null):
+			if (collider.dialogue_resource != null && !is_in_menu):
+		
 				DialogueManager.show_dialogue_balloon(collider.dialogue_resource, "start");
+				is_in_menu = true;
 
 				
 
