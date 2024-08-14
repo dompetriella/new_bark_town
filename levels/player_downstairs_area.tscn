@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=4 uid="uid://djtp6hnqdbefe"]
+[gd_scene load_steps=11 format=4 uid="uid://djtp6hnqdbefe"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_3ia2c"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_cgqfm"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="2_wubb3"]
 [ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_mxljg"]
 [ext_resource type="SpriteFrames" uid="uid://csvrh0fsfcv5l" path="res://assets/npc/mother.tres" id="5_v0jya"]
+[ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="6_q5qmb"]
+[ext_resource type="Resource" uid="uid://bgftauat740oo" path="res://dialogue/new_bark_town/player_downstairs_area/mom.dialogue" id="7_sugwu"]
+[ext_resource type="Resource" uid="uid://cw4humdlpn0k2" path="res://dialogue/new_bark_town/player_downstairs_area/movie.dialogue" id="7_wn88p"]
+[ext_resource type="Resource" uid="uid://b4txm6fxttt16" path="res://dialogue/new_bark_town/player_downstairs_area/stove.dialogue" id="8_83pyu"]
+[ext_resource type="Resource" uid="uid://c7dnbsrnfamw2" path="res://dialogue/new_bark_town/player_downstairs_area/sink.dialogue" id="9_4cnch"]
 
 [node name="PlayerDownstairs" type="Node2D"]
 
@@ -34,6 +39,21 @@ end_point_coordinates = Vector2(192, 35)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(64, 136)
 
-[node name="Area2D" parent="." instance=ExtResource("4_mxljg")]
+[node name="Mom" parent="." instance=ExtResource("4_mxljg")]
 position = Vector2(0, 36)
 spriteFrames = ExtResource("5_v0jya")
+
+[node name="InteractiveAreaComponent" parent="Mom" instance=ExtResource("6_q5qmb")]
+dialogue_resource = ExtResource("7_sugwu")
+
+[node name="Movie TV" parent="." instance=ExtResource("6_q5qmb")]
+position = Vector2(32, 24)
+dialogue_resource = ExtResource("7_wn88p")
+
+[node name="Stove" parent="." instance=ExtResource("6_q5qmb")]
+position = Vector2(-32, 24)
+dialogue_resource = ExtResource("8_83pyu")
+
+[node name="Sink" parent="." instance=ExtResource("6_q5qmb")]
+position = Vector2(-16, 24)
+dialogue_resource = ExtResource("9_4cnch")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b4txm6fxttt16"
+path="res://.godot/imported/stove.dialogue-ce2989f569cd91a3ca34f2d9c2a5335d.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_downstairs_area/stove.dialogue"
+dest_files=["res://.godot/imported/stove.dialogue-ce2989f569cd91a3ca34f2d9c2a5335d.tres"]
+
+[params]
+
+defaults=true

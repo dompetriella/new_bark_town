@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c7dnbsrnfamw2"
+path="res://.godot/imported/sink.dialogue-5db9e1c8f86b468ce924f20f8a6c7743.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_downstairs_area/sink.dialogue"
+dest_files=["res://.godot/imported/sink.dialogue-5db9e1c8f86b468ce924f20f8a6c7743.tres"]
+
+[params]
+
+defaults=true

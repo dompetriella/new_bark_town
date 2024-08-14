@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bgftauat740oo"
+path="res://.godot/imported/mom.dialogue-90eacfea4212587cf13e7904f3767da2.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_downstairs_area/mom.dialogue"
+dest_files=["res://.godot/imported/mom.dialogue-90eacfea4212587cf13e7904f3767da2.tres"]
+
+[params]
+
+defaults=true

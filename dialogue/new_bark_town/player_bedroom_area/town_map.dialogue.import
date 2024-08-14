@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://buodmto086kaq"
+path="res://.godot/imported/town_map.dialogue-599f8036ed10d6d371c985610131a57c.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_bedroom_area/town_map.dialogue"
+dest_files=["res://.godot/imported/town_map.dialogue-599f8036ed10d6d371c985610131a57c.tres"]
+
+[params]
+
+defaults=true

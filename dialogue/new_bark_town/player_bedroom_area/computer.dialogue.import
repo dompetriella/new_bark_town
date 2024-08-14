@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cudreh04es1o2"
+path="res://.godot/imported/computer.dialogue-335025e2850c62bef9c5374faada52ea.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_bedroom_area/computer.dialogue"
+dest_files=["res://.godot/imported/computer.dialogue-335025e2850c62bef9c5374faada52ea.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bvu3drg652mje"
+path="res://.godot/imported/bookshelf.dialogue-68f1face7be098fe633143fb619c367e.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_bedroom_area/bookshelf.dialogue"
+dest_files=["res://.godot/imported/bookshelf.dialogue-68f1face7be098fe633143fb619c367e.tres"]
+
+[params]
+
+defaults=true

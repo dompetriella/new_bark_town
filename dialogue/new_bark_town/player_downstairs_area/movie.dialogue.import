@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cw4humdlpn0k2"
+path="res://.godot/imported/movie.dialogue-65cc4ab5258af10cea435955b1e7924a.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_downstairs_area/movie.dialogue"
+dest_files=["res://.godot/imported/movie.dialogue-65cc4ab5258af10cea435955b1e7924a.tres"]
+
+[params]
+
+defaults=true

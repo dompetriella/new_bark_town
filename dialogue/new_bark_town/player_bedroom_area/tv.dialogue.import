@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ccutnmkqi87rg"
+path="res://.godot/imported/tv.dialogue-1ba39807bdd50cbb764dc5ddfdd4c127.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/player_bedroom_area/tv.dialogue"
+dest_files=["res://.godot/imported/tv.dialogue-1ba39807bdd50cbb764dc5ddfdd4c127.tres"]
+
+[params]
+
+defaults=true

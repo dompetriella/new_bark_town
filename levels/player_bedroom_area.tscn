@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://cnkywygy0dn7r"]
+[gd_scene load_steps=13 format=4 uid="uid://cnkywygy0dn7r"]
 
 [ext_resource type="Texture2D" uid="uid://fisjwqjenvsq" path="res://assets/pokemon_silver_objects.png" id="1_xo2yx"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="2_fw28w"]
-[ext_resource type="Resource" uid="uid://cudreh04es1o2" path="res://dialogue/new_bark_town/computer.dialogue" id="3_ric6y"]
-[ext_resource type="Resource" uid="uid://ccutnmkqi87rg" path="res://dialogue/new_bark_town/tv.dialogue" id="3_wfqrj"]
+[ext_resource type="Resource" uid="uid://cudreh04es1o2" path="res://dialogue/new_bark_town/player_bedroom_area/computer.dialogue" id="3_ric6y"]
+[ext_resource type="Resource" uid="uid://ccutnmkqi87rg" path="res://dialogue/new_bark_town/player_bedroom_area/tv.dialogue" id="3_wfqrj"]
 [ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="3_whtal"]
-[ext_resource type="Resource" uid="uid://bsdj4kw6fnxu0" path="res://dialogue/new_bark_town/radio.dialogue" id="4_erqk2"]
-[ext_resource type="Resource" uid="uid://bvu3drg652mje" path="res://dialogue/new_bark_town/bookshelf.dialogue" id="6_br4d2"]
+[ext_resource type="Resource" uid="uid://bsdj4kw6fnxu0" path="res://dialogue/new_bark_town/player_bedroom_area/radio.dialogue" id="4_erqk2"]
+[ext_resource type="Resource" uid="uid://bvu3drg652mje" path="res://dialogue/new_bark_town/player_bedroom_area/bookshelf.dialogue" id="6_br4d2"]
+[ext_resource type="Resource" uid="uid://buodmto086kaq" path="res://dialogue/new_bark_town/player_bedroom_area/town_map.dialogue" id="8_6tt2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg2bf"]
 texture = ExtResource("1_xo2yx")
@@ -190,3 +191,7 @@ dialogue_resource = ExtResource("6_br4d2")
 position = Vector2(112, 3)
 next_scene_path = "res://levels/player_downstairs_area.tscn"
 end_point_coordinates = Vector2(112, 4)
+
+[node name="InteractiveAreaComponent" parent="." instance=ExtResource("3_whtal")]
+position = Vector2(96, 8)
+dialogue_resource = ExtResource("8_6tt2h")
