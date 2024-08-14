@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bj8tshh2056yj"
+path="res://.godot/imported/town_sign.dialogue-26dd3f260e7d638b7e37f76508779c44.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/town_sign.dialogue"
+dest_files=["res://.godot/imported/town_sign.dialogue-26dd3f260e7d638b7e37f76508779c44.tres"]
+
+[params]
+
+defaults=true

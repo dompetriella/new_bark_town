@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dyul4sq7bbv5f"
+path="res://.godot/imported/elms_house_sign.dialogue-ce94b195b9e68e4a6e9b2836d237f682.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/elms_house_sign.dialogue"
+dest_files=["res://.godot/imported/elms_house_sign.dialogue-ce94b195b9e68e4a6e9b2836d237f682.tres"]
+
+[params]
+
+defaults=true

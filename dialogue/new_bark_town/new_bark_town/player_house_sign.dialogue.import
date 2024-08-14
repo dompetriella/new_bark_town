@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c6vrel238u352"
+path="res://.godot/imported/player_house_sign.dialogue-2c4400986b146715acdb51ae6b172af4.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/player_house_sign.dialogue"
+dest_files=["res://.godot/imported/player_house_sign.dialogue-2c4400986b146715acdb51ae6b172af4.tres"]
+
+[params]
+
+defaults=true

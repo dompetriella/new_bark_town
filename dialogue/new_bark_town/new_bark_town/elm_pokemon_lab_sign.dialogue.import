@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cgv7kbyb1th0d"
+path="res://.godot/imported/elm_pokemon_lab_sign.dialogue-6584e76db27e99645b1b465f8d6e1971.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/elm_pokemon_lab_sign.dialogue"
+dest_files=["res://.godot/imported/elm_pokemon_lab_sign.dialogue-6584e76db27e99645b1b465f8d6e1971.tres"]
+
+[params]
+
+defaults=true
