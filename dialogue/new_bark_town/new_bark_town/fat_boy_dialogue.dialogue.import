@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://sve0fjc0dguq"
+path="res://.godot/imported/fat_boy_dialogue.dialogue-cc75d831a92cc1e2923c237748e62207.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/fat_boy_dialogue.dialogue"
+dest_files=["res://.godot/imported/fat_boy_dialogue.dialogue-cc75d831a92cc1e2923c237748e62207.tres"]
+
+[params]
+
+defaults=true

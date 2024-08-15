@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c2tsdi4yhfyns"]
+[gd_scene load_steps=15 format=4 uid="uid://c2tsdi4yhfyns"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_bwr7v"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_ddxtu"]
@@ -7,7 +7,9 @@
 [ext_resource type="SpriteFrames" uid="uid://b345wfls8bdx2" path="res://assets/npc/fat_boy.tres" id="5_cpxop"]
 [ext_resource type="SpriteFrames" uid="uid://cstva0ila3ogx" path="res://assets/npc/headband_lady.tres" id="6_4yjty"]
 [ext_resource type="SpriteFrames" uid="uid://csocqqvyjlvi" path="res://assets/npc/rival.tres" id="7_lbtwb"]
+[ext_resource type="Resource" uid="uid://sve0fjc0dguq" path="res://dialogue/new_bark_town/new_bark_town/fat_boy_dialogue.dialogue" id="7_scyp8"]
 [ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="8_c2cgy"]
+[ext_resource type="Resource" uid="uid://c6o5upptf2jp3" path="res://dialogue/new_bark_town/new_bark_town/headband_girl_dialogue.dart.dialogue" id="9_daro2"]
 [ext_resource type="Resource" uid="uid://c6vrel238u352" path="res://dialogue/new_bark_town/new_bark_town/player_house_sign.dialogue" id="9_mlnw2"]
 [ext_resource type="Resource" uid="uid://cgv7kbyb1th0d" path="res://dialogue/new_bark_town/new_bark_town/elm_pokemon_lab_sign.dialogue" id="10_rgcam"]
 [ext_resource type="Resource" uid="uid://dyul4sq7bbv5f" path="res://dialogue/new_bark_town/new_bark_town/elms_house_sign.dialogue" id="11_0u4av"]
@@ -56,9 +58,15 @@ direction_after_transition = 2
 position = Vector2(176, 83)
 spriteFrames = ExtResource("5_cpxop")
 
+[node name="InteractiveAreaComponent" parent="FatBoyNewBarkTown" instance=ExtResource("8_c2cgy")]
+dialogue_resource = ExtResource("7_scyp8")
+
 [node name="HeadbandLadyNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
 position = Vector2(80, 83)
 spriteFrames = ExtResource("6_4yjty")
+
+[node name="InteractiveAreaComponent" parent="HeadbandLadyNewBarkTown" instance=ExtResource("8_c2cgy")]
+dialogue_resource = ExtResource("9_daro2")
 
 [node name="RivalNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
 position = Vector2(32, -13)

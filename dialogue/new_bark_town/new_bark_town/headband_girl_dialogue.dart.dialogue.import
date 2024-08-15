@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c6o5upptf2jp3"
+path="res://.godot/imported/headband_girl_dialogue.dart.dialogue-ccc5e2faaaa580c6eca7540cb7dd20cd.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/headband_girl_dialogue.dart.dialogue"
+dest_files=["res://.godot/imported/headband_girl_dialogue.dart.dialogue-ccc5e2faaaa580c6eca7540cb7dd20cd.tres"]
+
+[params]
+
+defaults=true

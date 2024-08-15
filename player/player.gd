@@ -66,7 +66,10 @@ func _physics_process(delta: float) -> void:
 		var collider:  Node2D = player_facing_raycast.get_collider();
 		if (collider is InteractiveAreaComponent):
 			if (collider.dialogue_resource != null && !is_in_menu):
-		
+				if (collider.get_parent() is Npc):
+					
+					var npc: Npc = collider.get_parent();
+					npc.change_npc_direction_to_match_player(player_facing_raycast);
 				DialogueManager.show_dialogue_balloon(collider.dialogue_resource, "start");
 				is_in_menu = true;
 
