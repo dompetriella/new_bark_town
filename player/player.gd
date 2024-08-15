@@ -21,7 +21,10 @@ var player_facing_raycast: RayCast2D;
 
 func _ready() -> void:
 	Events.change_player_position.connect(change_player_position);
-	DialogueManager.dialogue_ended.connect(func(resource): is_in_menu = false);
+	DialogueManager.dialogue_ended.connect(func(resource): 
+		await get_tree().create_timer(0.2).timeout;
+		is_in_menu = false
+		);
 	player_facing_raycast = interactive_raycast_south;
 
 func change_player_position(new_position: Vector2):
@@ -66,12 +69,12 @@ func _physics_process(delta: float) -> void:
 		var collider:  Node2D = player_facing_raycast.get_collider();
 		if (collider is InteractiveAreaComponent):
 			if (collider.dialogue_resource != null && !is_in_menu):
+				is_in_menu = true;
 				if (collider.get_parent() is Npc):
-					
 					var npc: Npc = collider.get_parent();
 					npc.change_npc_direction_to_match_player(player_facing_raycast);
 				DialogueManager.show_dialogue_balloon(collider.dialogue_resource, "start");
-				is_in_menu = true;
+				
 
 				
 
