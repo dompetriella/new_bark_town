@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://t18k1fufsaf0"
+path="res://.godot/imported/professor_elm.dialogue-7eb63f38b300bd82160d05d79b44e381.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/professor_elm.dialogue"
+dest_files=["res://.godot/imported/professor_elm.dialogue-7eb63f38b300bd82160d05d79b44e381.tres"]
+
+[params]
+
+defaults=true

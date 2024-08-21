@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://gh0axffa0yte"
+path="res://.godot/imported/elms_assistant.dialogue-a5651e428ed4604e049f4442c150a2f5.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/elms_assistant.dialogue"
+dest_files=["res://.godot/imported/elms_assistant.dialogue-a5651e428ed4604e049f4442c150a2f5.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://5p6gyt18xs1e"
+path="res://.godot/imported/elms_computer.dialogue-350d6e7722d3f0d331901841542b36ac.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_house/elms_computer.dialogue"
+dest_files=["res://.godot/imported/elms_computer.dialogue-350d6e7722d3f0d331901841542b36ac.tres"]
+
+[params]
+
+defaults=true

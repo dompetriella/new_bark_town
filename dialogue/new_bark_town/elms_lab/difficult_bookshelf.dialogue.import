@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://brvlsub7b1y03"
+path="res://.godot/imported/difficult_bookshelf.dialogue-da421f7e2db6f79b568e33ef9de7616d.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/difficult_bookshelf.dialogue"
+dest_files=["res://.godot/imported/difficult_bookshelf.dialogue-da421f7e2db6f79b568e33ef9de7616d.tres"]
+
+[params]
+
+defaults=true

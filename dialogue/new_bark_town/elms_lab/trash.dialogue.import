@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b263npm4dkb8k"
+path="res://.godot/imported/trash.dialogue-a5dec2cbc8469cf504bb8051bf77a948.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/trash.dialogue"
+dest_files=["res://.godot/imported/trash.dialogue-a5dec2cbc8469cf504bb8051bf77a948.tres"]
+
+[params]
+
+defaults=true

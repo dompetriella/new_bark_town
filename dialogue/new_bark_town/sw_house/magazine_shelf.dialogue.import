@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cw5ikhynglh5p"
+path="res://.godot/imported/magazine_shelf.dialogue-709b05828e47849196f137ee121a2607.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/sw_house/magazine_shelf.dialogue"
+dest_files=["res://.godot/imported/magazine_shelf.dialogue-709b05828e47849196f137ee121a2607.tres"]
+
+[params]
+
+defaults=true

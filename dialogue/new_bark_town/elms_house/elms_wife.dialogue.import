@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://uoflrx7sjqw8"
+path="res://.godot/imported/elms_wife.dialogue-40b645b578590e4309e908a9077798a6.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_house/elms_wife.dialogue"
+dest_files=["res://.godot/imported/elms_wife.dialogue-40b645b578590e4309e908a9077798a6.tres"]
+
+[params]
+
+defaults=true

@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=4 uid="uid://b8c7shkka3y4v"]
+[gd_scene load_steps=13 format=4 uid="uid://b8c7shkka3y4v"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_arbd1"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_xq3jn"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_cqw0a"]
 [ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_042p4"]
 [ext_resource type="SpriteFrames" uid="uid://cstva0ila3ogx" path="res://assets/npc/headband_lady.tres" id="5_k0i8m"]
+[ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="6_84ni1"]
 [ext_resource type="SpriteFrames" uid="uid://dsaqt2867pytu" path="res://assets/npc/darkhair_kid.tres" id="6_pxu6v"]
+[ext_resource type="Resource" uid="uid://uoflrx7sjqw8" path="res://dialogue/new_bark_town/elms_house/elms_wife.dialogue" id="7_ykhtu"]
+[ext_resource type="Resource" uid="uid://dn3l50tp27vyp" path="res://dialogue/new_bark_town/elms_house/elms_son.dialogue" id="9_umvw0"]
+[ext_resource type="Resource" uid="uid://ccutnmkqi87rg" path="res://dialogue/new_bark_town/player_bedroom_area/tv.dialogue" id="10_pcgcg"]
+[ext_resource type="Resource" uid="uid://brvlsub7b1y03" path="res://dialogue/new_bark_town/elms_lab/difficult_bookshelf.dialogue" id="11_prokb"]
+[ext_resource type="Resource" uid="uid://bfd171hykk1cm" path="res://dialogue/new_bark_town/elms_lab/reflection.dialogue" id="12_bryq5"]
 
 [node name="ElmsHouse" type="Node2D"]
 
@@ -17,13 +23,13 @@ tile_set = ExtResource("1_arbd1")
 tile_map_data = PackedByteArray("AAAAAP7/AQAWAFQAAAAAAP//AQAXAFAAAAABAP7/AQAWAFQAAAABAP//AQAYAFAAAAACAP7/AQAWAFQAAAACAP//AQAWAFUAAAADAP7/AQAWAFQAAAADAP//AQAWAFUAAAAEAP7/AQAUACAAAAAEAP//AQAWAFUAAAAFAP7/AQAVACAAAAAFAP//AQAWAFUAAAAGAP7/AQAWAFQAAAAGAP//AQAWAFUAAAAHAP7/AQAWAFQAAAAHAP//AQAWAFUAAAAIAP7/AQAWAFQAAAAIAP//AQAZAFAAAAAJAP7/AQAWAFQAAAAJAP//AQAaAFAAAAAKAP7/AQAWAFQAAAAKAP//AQAWAFUAAAALAP7/AQAWAFQAAAALAP//AQAWAFUAAAAMAP7/AQASACIAAAAMAP//AQASACMAAAANAP7/AQATACIAAAANAP//AQATACMAAAAOAP7/AQAUAEAAAAAPAP7/AQAVAEAAAAAAAAAAAQAXAFEAAAAAAAEAAQAXAFIAAAABAAAAAQAYAFEAAAABAAEAAQAYAFIAAAAOAAAAAQASACEAAAAPAAAAAQATACEAAAAOAAEAAQAUACEAAAAPAAEAAQAVACEAAAAMAAAAAQASACQAAAAMAAEAAQASACUAAAANAAAAAQATACQAAAANAAEAAQATACUAAAAOAP//AQASACQAAAAPAP//AQATACQAAAAKAAEAAQAUACEAAAALAAEAAQAVACEAAAAKAAAAAQASACIAAAALAAAAAQATACIAAAAIAAAAAQAZAFEAAAAIAAEAAQAZAFIAAAAJAAAAAQAaAFEAAAAJAAEAAQAaAFIAAAD///7/AQASAFAAAAD/////AQASAFAAAAD//wAAAQASAFAAAAD//wEAAQASAFAAAAD//wIAAQASAFAAAAD//wMAAQASAFAAAAD//wQAAQASAFAAAAD//wUAAQASAFAAAAD//wYAAQASAFAAAAD//wcAAQASAFAAAAD//wgAAQASAFAAAAD//wkAAQASAFAAAAD//woAAQASAFAAAAD//wsAAQASAFAAAAD//wwAAQASAFAAAAD//w0AAQASAFAAAAAAAA4AAQASAFAAAAABAA4AAQASAFAAAAACAA4AAQASAFAAAAADAA4AAQASAFAAAAD//w4AAQASAFAAAAAQAA0AAQASAFAAAAAQAAwAAQASAFAAAAAQAAsAAQASAFAAAAAQAAoAAQASAFAAAAAQAAkAAQASAFAAAAAQAAgAAQASAFAAAAAQAAcAAQASAFAAAAAQAAYAAQASAFAAAAAQAAUAAQASAFAAAAAQAAQAAQASAFAAAAAQAAMAAQASAFAAAAAQAAIAAQASAFAAAAAQAAEAAQASAFAAAAAQAAAAAQASAFAAAAAQAP//AQASAFAAAAAQAP7/AQASAFAAAAAIAA4AAQASAFAAAAAJAA4AAQASAFAAAAAKAA4AAQASAFAAAAALAA4AAQASAFAAAAAMAA4AAQASAFAAAAANAA4AAQASAFAAAAAOAA4AAQASAFAAAAAPAA4AAQASAFAAAAAQAA4AAQASAFAAAAAQAP3/AQASAFAAAAAPAP3/AQASAFAAAAAOAP3/AQASAFAAAAANAP3/AQASAFAAAAAMAP3/AQASAFAAAAALAP3/AQASAFAAAAAKAP3/AQASAFAAAAAJAP3/AQASAFAAAAAIAP3/AQASAFAAAAAHAP3/AQASAFAAAAAGAP3/AQASAFAAAAAFAP3/AQASAFAAAAAEAP3/AQASAFAAAAADAP3/AQASAFAAAAACAP3/AQASAFAAAAABAP3/AQASAFAAAAAAAP3/AQASAFAAAAD///3/AQASAFAAAAAFAAQAAQAdACQAAAAFAAUAAQAdACUAAAAFAAYAAQAdACQAAAAFAAcAAQAdACUAAAAGAAQAAQAeACAAAAAGAAUAAQAeACEAAAAGAAYAAQAeACIAAAAGAAcAAQAeACMAAAAHAAQAAQAfACAAAAAHAAUAAQAfACEAAAAHAAYAAQAfACIAAAAHAAcAAQAfACMAAAAHAAgAAQAfACQAAAAIAAQAAQAgACAAAAAIAAUAAQAgACEAAAAIAAYAAQAgACIAAAAIAAcAAQAgACMAAAAIAAgAAQAgACQAAAAJAAQAAQAhACAAAAAJAAUAAQAhACEAAAAJAAYAAQAhACIAAAAJAAcAAQAhACMAAAAJAAgAAQAhACQAAAAKAAQAAQAcACQAAAAKAAUAAQAcACUAAAAKAAYAAQAcACQAAAAKAAcAAQAcACUAAAALAAQAAQAdACQAAAALAAUAAQAdACUAAAALAAYAAQAdACQAAAALAAcAAQAdACUAAAAEAAQAAQAcACQAAAAEAAUAAQAcACUAAAAEAAYAAQAcACQAAAAEAAcAAQAcACUAAAAGAAgAAQAeACQAAAA=")
 tile_set = ExtResource("2_xq3jn")
 
-[node name="ElmsHouse_NewBarkTown" parent="." instance=ExtResource("3_cqw0a")]
-position = Vector2(40, 119)
+[node name="ElmsHouse_NewBarkTown3" parent="." instance=ExtResource("3_cqw0a")]
+position = Vector2(40, 113)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(160, 163)
 
-[node name="ElmsHouse_NewBarkTown2" parent="." instance=ExtResource("3_cqw0a")]
-position = Vector2(56, 119)
+[node name="ElmsHouse_NewBarkTown4" parent="." instance=ExtResource("3_cqw0a")]
+position = Vector2(56, 113)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(160, 163)
 
@@ -31,6 +37,31 @@ end_point_coordinates = Vector2(160, 163)
 position = Vector2(24, 71)
 spriteFrames = ExtResource("5_k0i8m")
 
+[node name="InteractiveAreaComponent" parent="HeadbandLady" instance=ExtResource("6_84ni1")]
+dialogue_resource = ExtResource("7_ykhtu")
+
 [node name="Darkhairkid" parent="." instance=ExtResource("4_042p4")]
 position = Vector2(88, 53)
 spriteFrames = ExtResource("6_pxu6v")
+
+[node name="InteractiveAreaComponent" parent="Darkhairkid" instance=ExtResource("6_84ni1")]
+dialogue_resource = ExtResource("9_umvw0")
+
+[node name="InteractiveAreaComponent" parent="." instance=ExtResource("6_84ni1")]
+position = Vector2(8, 8)
+
+[node name="InteractiveAreaComponent2" parent="." instance=ExtResource("6_84ni1")]
+position = Vector2(72, 8)
+dialogue_resource = ExtResource("10_pcgcg")
+
+[node name="InteractiveAreaComponent3" parent="." instance=ExtResource("6_84ni1")]
+position = Vector2(104, 8)
+dialogue_resource = ExtResource("11_prokb")
+
+[node name="InteractiveAreaComponent4" parent="." instance=ExtResource("6_84ni1")]
+position = Vector2(120, 8)
+dialogue_resource = ExtResource("11_prokb")
+
+[node name="InteractiveAreaComponent5" parent="." instance=ExtResource("6_84ni1")]
+position = Vector2(40, -8)
+dialogue_resource = ExtResource("12_bryq5")

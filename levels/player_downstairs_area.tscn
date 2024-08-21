@@ -26,13 +26,13 @@ position = Vector2(112, 1)
 next_scene_path = "res://levels/player_bedroom_area.tscn"
 end_point_coordinates = Vector2(112, 4)
 
-[node name="DownstairsLeft_NewBarkTown" parent="." instance=ExtResource("2_wubb3")]
-position = Vector2(64, 135)
+[node name="DownstairsLeft_NewBarkTown2" parent="." instance=ExtResource("2_wubb3")]
+position = Vector2(64, 129)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(192, 35)
 
-[node name="DownstairsRight_NewBarkTown" parent="." instance=ExtResource("2_wubb3")]
-position = Vector2(80, 135)
+[node name="DownstairsRight_NewBarkTown2" parent="." instance=ExtResource("2_wubb3")]
+position = Vector2(80, 129)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(192, 35)
 

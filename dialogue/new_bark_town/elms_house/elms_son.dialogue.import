@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dn3l50tp27vyp"
+path="res://.godot/imported/elms_son.dialogue-f8f410a8549bacfc64b7d67a6a3c465f.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_house/elms_son.dialogue"
+dest_files=["res://.godot/imported/elms_son.dialogue-f8f410a8549bacfc64b7d67a6a3c465f.tres"]
+
+[params]
+
+defaults=true

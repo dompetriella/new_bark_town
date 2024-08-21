@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dtct0gfxgj8b6"
+path="res://.godot/imported/ponytail_girl.dialogue-a83a9a0e7053b20c9260aee2fc526837.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/sw_house/ponytail_girl.dialogue"
+dest_files=["res://.godot/imported/ponytail_girl.dialogue-a83a9a0e7053b20c9260aee2fc526837.tres"]
+
+[params]
+
+defaults=true

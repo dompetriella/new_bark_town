@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://bg557gq0b5367"]
+[gd_scene load_steps=12 format=4 uid="uid://bg557gq0b5367"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_grg27"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_2fkay"]
 [ext_resource type="PackedScene" uid="uid://dok5nbsxto8j4" path="res://level_utility/transition_point/transition_point.tscn" id="3_jmilj"]
 [ext_resource type="PackedScene" uid="uid://xru82inrjm5v" path="res://npc/npc.tscn" id="4_hoklm"]
 [ext_resource type="SpriteFrames" uid="uid://cfuchcw3b4fbv" path="res://assets/npc/ponytail_girl.tres" id="5_4pvi8"]
+[ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="6_4ptvt"]
+[ext_resource type="Resource" uid="uid://dtct0gfxgj8b6" path="res://dialogue/new_bark_town/sw_house/ponytail_girl.dialogue" id="7_t2gpk"]
+[ext_resource type="Resource" uid="uid://cw5ikhynglh5p" path="res://dialogue/new_bark_town/sw_house/magazine_shelf.dialogue" id="8_h8hpv"]
+[ext_resource type="Resource" uid="uid://ccutnmkqi87rg" path="res://dialogue/new_bark_town/player_bedroom_area/tv.dialogue" id="9_ciy1e"]
+[ext_resource type="Resource" uid="uid://bsdj4kw6fnxu0" path="res://dialogue/new_bark_town/player_bedroom_area/radio.dialogue" id="10_wuref"]
+[ext_resource type="Resource" uid="uid://bfd171hykk1cm" path="res://dialogue/new_bark_town/elms_lab/reflection.dialogue" id="11_tgodn"]
 
 [node name="SwHouse" type="Node2D"]
 
@@ -16,16 +22,39 @@ tile_set = ExtResource("1_grg27")
 tile_map_data = PackedByteArray("AAACAP7/AQASABoAAAACAP//AQASABsAAAADAP7/AQATABoAAAADAP//AQATABsAAAAEAP7/AQAbABgAAAAEAP//AQAeABgAAAAFAP7/AQAbABgAAAAFAP//AQAfABgAAAAGAP7/AQAZABgAAAAGAP//AQAZABkAAAAHAP7/AQAaABgAAAAHAP//AQAaABkAAAAIAP7/AQAbABgAAAAIAP//AQAbABkAAAAJAP7/AQAbABgAAAAJAP//AQAbABkAAAAKAP7/AQAWABgAAAAKAP//AQAWABkAAAALAP7/AQAXABgAAAALAP//AQAXABkAAAAMAP7/AQAbABgAAAAMAP//AQAbABkAAAANAP7/AQAbABgAAAANAP//AQAbABkAAAAOAP7/AQAbABgAAAAOAP//AQAcABgAAAAPAP7/AQAbABgAAAAPAP//AQAdABgAAAACAAAAAQASABwAAAACAAEAAQASAB0AAAADAAAAAQATABwAAAADAAEAAQATAB0AAAABAP7/AQATABoAAAABAP//AQATABsAAAAAAP7/AQASABoAAAAAAP//AQASABsAAAAAAAAAAQASABwAAAABAAAAAQATABwAAAAAAAEAAQAkAB0AAAABAAEAAQAnAB0AAAAEAAEAAQAeAB0AAAAFAAEAAQAfAB0AAAAEAAAAAQAeABkAAAAFAAAAAQAfABkAAAAOAAEAAQAeAB0AAAAPAAEAAQAfAB0AAAAOAAAAAQAcABkAAAAPAAAAAQAdABkAAAAAAAoAAQAUABoAAAAAAAsAAQAUABsAAAAAAAwAAQAUABwAAAAAAA0AAQAUAB0AAAABAAoAAQAVABoAAAABAAsAAQAVABsAAAABAAwAAQAVABwAAAABAA0AAQAVAB0AAAAOAAoAAQAUABoAAAAOAAsAAQAUABsAAAAOAAwAAQAUABwAAAAOAA0AAQAUAB0AAAAPAAoAAQAVABoAAAAPAAsAAQAVABsAAAAPAAwAAQAVABwAAAAPAA0AAQAVAB0AAAAEAAQAAQAgABwAAAAEAAUAAQAgAB0AAAAFAAQAAQAhABwAAAAFAAUAAQAhAB0AAAAEAAYAAQAgABwAAAAEAAcAAQAgAB0AAAAFAAYAAQAhABwAAAAFAAcAAQAhAB0AAAAGAAcAAQAkAB0AAAAHAAcAAQAlAB0AAAAIAAcAAQAmAB0AAAAJAAcAAQAnAB0AAAAGAAYAAQAkABwAAAAHAAYAAQAlABwAAAAIAAYAAQAmABwAAAAJAAYAAQAnABwAAAAHAAUAAQAiABkAAAAIAAUAAQAiABkAAAAJAAQAAQAnABgAAAAJAAUAAQAnABsAAAAGAAQAAQAkABgAAAAGAAUAAQAkABsAAAAHAAQAAQAlABgAAAAIAAQAAQAmABgAAAAKAAQAAQAgABwAAAAKAAUAAQAgAB0AAAALAAQAAQAhABwAAAALAAUAAQAhAB0AAAAKAAYAAQAgABwAAAAKAAcAAQAgAB0AAAALAAYAAQAhABwAAAALAAcAAQAhAB0AAAD///7/AQASAFAAAAD/////AQASAFAAAAD//wAAAQASAFAAAAD//wEAAQASAFAAAAD//wIAAQASAFAAAAD//wMAAQASAFAAAAD//wQAAQASAFAAAAD//wUAAQASAFAAAAD//wYAAQASAFAAAAD//wcAAQASAFAAAAD//wgAAQASAFAAAAD//wkAAQASAFAAAAD//woAAQASAFAAAAD//wsAAQASAFAAAAD//wwAAQASAFAAAAD//w0AAQASAFAAAAD//w4AAQASAFAAAAAAAA4AAQASAFAAAAABAA4AAQASAFAAAAACAA4AAQASAFAAAAADAA4AAQASAFAAAAAIAA4AAQASAFAAAAAJAA4AAQASAFAAAAAKAA4AAQASAFAAAAALAA4AAQASAFAAAAAMAA4AAQASAFAAAAANAA4AAQASAFAAAAAOAA4AAQASAFAAAAAPAA4AAQASAFAAAAAQAA4AAQASAFAAAAAQAA0AAQASAFAAAAAQAAwAAQASAFAAAAAQAAsAAQASAFAAAAAQAAoAAQASAFAAAAAQAAkAAQASAFAAAAAQAAgAAQASAFAAAAAQAAcAAQASAFAAAAAQAAYAAQASAFAAAAAQAAUAAQASAFAAAAAQAAQAAQASAFAAAAAQAAMAAQASAFAAAAAQAAIAAQASAFAAAAAQAAEAAQASAFAAAAAQAAAAAQASAFAAAAAQAP//AQASAFAAAAAQAP7/AQASAFAAAAAQAP3/AQASAFAAAAAPAP3/AQASAFAAAAAOAP3/AQASAFAAAAANAP3/AQASAFAAAAAMAP3/AQASAFAAAAALAP3/AQASAFAAAAAKAP3/AQASAFAAAAAJAP3/AQASAFAAAAAIAP3/AQASAFAAAAAHAP3/AQASAFAAAAAGAP3/AQASAFAAAAAFAP3/AQASAFAAAAAEAP3/AQASAFAAAAADAP3/AQASAFAAAAACAP3/AQASAFAAAAABAP3/AQASAFAAAAAAAP3/AQASAFAAAAD///3/AQASAFAAAAA=")
 tile_set = ExtResource("2_2fkay")
 
-[node name="SWHouse_NewBarkTown" parent="." instance=ExtResource("3_jmilj")]
-position = Vector2(40, 119)
+[node name="SWHouse_NewBarkTown3" parent="." instance=ExtResource("3_jmilj")]
+position = Vector2(40, 113)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(32, 131)
 
-[node name="SWHouse_NewBarkTown2" parent="." instance=ExtResource("3_jmilj")]
-position = Vector2(56, 119)
+[node name="SWHouse_NewBarkTown4" parent="." instance=ExtResource("3_jmilj")]
+position = Vector2(56, 113)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(32, 131)
 
 [node name="PonytailGirl" parent="." instance=ExtResource("4_hoklm")]
 position = Vector2(40, 38)
 spriteFrames = ExtResource("5_4pvi8")
+
+[node name="InteractiveAreaComponent" parent="PonytailGirl" instance=ExtResource("6_4ptvt")]
+dialogue_resource = ExtResource("7_t2gpk")
+
+[node name="InteractiveAreaComponent" parent="." instance=ExtResource("6_4ptvt")]
+position = Vector2(8, 8)
+dialogue_resource = ExtResource("8_h8hpv")
+
+[node name="InteractiveAreaComponent2" parent="." instance=ExtResource("6_4ptvt")]
+position = Vector2(24, 8)
+dialogue_resource = ExtResource("8_h8hpv")
+
+[node name="InteractiveAreaComponent3" parent="." instance=ExtResource("6_4ptvt")]
+position = Vector2(40, 8)
+dialogue_resource = ExtResource("9_ciy1e")
+
+[node name="InteractiveAreaComponent4" parent="." instance=ExtResource("6_4ptvt")]
+position = Vector2(120, 8)
+dialogue_resource = ExtResource("10_wuref")
+
+[node name="InteractiveAreaComponent5" parent="." instance=ExtResource("6_4ptvt")]
+position = Vector2(88, -8)
+dialogue_resource = ExtResource("11_tgodn")

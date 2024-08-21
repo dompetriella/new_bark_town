@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dvruaokiv6vs5"
+path="res://.godot/imported/travel_tip_1.dialogue-09eef7d342b964e884cb1d30e3d0ab7b.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/travel_tip_1.dialogue"
+dest_files=["res://.godot/imported/travel_tip_1.dialogue-09eef7d342b964e884cb1d30e3d0ab7b.tres"]
+
+[params]
+
+defaults=true

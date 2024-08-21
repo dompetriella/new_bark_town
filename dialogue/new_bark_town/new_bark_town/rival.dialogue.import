@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ccbysciyntyu2"
+path="res://.godot/imported/rival.dialogue-6864b29e4ccae723be7f0335b5ecfa36.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/new_bark_town/rival.dialogue"
+dest_files=["res://.godot/imported/rival.dialogue-6864b29e4ccae723be7f0335b5ecfa36.tres"]
+
+[params]
+
+defaults=true

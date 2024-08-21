@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c2tsdi4yhfyns"]
+[gd_scene load_steps=16 format=4 uid="uid://c2tsdi4yhfyns"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_bwr7v"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_ddxtu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://c6vrel238u352" path="res://dialogue/new_bark_town/new_bark_town/player_house_sign.dialogue" id="9_mlnw2"]
 [ext_resource type="Resource" uid="uid://cgv7kbyb1th0d" path="res://dialogue/new_bark_town/new_bark_town/elm_pokemon_lab_sign.dialogue" id="10_rgcam"]
 [ext_resource type="Resource" uid="uid://dyul4sq7bbv5f" path="res://dialogue/new_bark_town/new_bark_town/elms_house_sign.dialogue" id="11_0u4av"]
+[ext_resource type="Resource" uid="uid://ccbysciyntyu2" path="res://dialogue/new_bark_town/new_bark_town/rival.dialogue" id="11_kn8sn"]
 [ext_resource type="Resource" uid="uid://bj8tshh2056yj" path="res://dialogue/new_bark_town/new_bark_town/town_sign.dialogue" id="12_k4kwx"]
 
 [node name="NewBarkTown" type="Node2D"]
@@ -41,6 +42,7 @@ position = Vector2(80, 2)
 next_scene_path = "res://levels/elms_lab.tscn"
 end_point_coordinates = Vector2(72, 183)
 direction_after_transition = 2
+music_track_path = "res://assets/sound/background_music/elm_pokemon_lab.mp3"
 
 [node name="NewBarkTown_ElmsHouse" parent="." instance=ExtResource("3_etyjp")]
 position = Vector2(160, 162)
@@ -71,6 +73,9 @@ dialogue_resource = ExtResource("9_daro2")
 [node name="RivalNewBarkTown" parent="." instance=ExtResource("4_a1bud")]
 position = Vector2(32, -13)
 spriteFrames = ExtResource("7_lbtwb")
+
+[node name="InteractiveAreaComponent" parent="RivalNewBarkTown" instance=ExtResource("8_c2cgy")]
+dialogue_resource = ExtResource("11_kn8sn")
 
 [node name="PlayersHouseSign" parent="." instance=ExtResource("8_c2cgy")]
 position = Vector2(160, 40)

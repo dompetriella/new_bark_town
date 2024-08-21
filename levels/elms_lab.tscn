@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cmn0t6gmelbqc"]
+[gd_scene load_steps=14 format=4 uid="uid://cmn0t6gmelbqc"]
 
 [ext_resource type="TileSet" uid="uid://bimeagekenpwb" path="res://assets/floors.tres" id="1_fnno6"]
 [ext_resource type="TileSet" uid="uid://ceqtrja0wd5r2" path="res://assets/objects.tres" id="2_s54pc"]
@@ -7,6 +7,12 @@
 [ext_resource type="SpriteFrames" uid="uid://ui02kaxgj65v" path="res://assets/npc/professor_elm.tres" id="5_t2xv5"]
 [ext_resource type="SpriteFrames" uid="uid://chqh3qqoysrf3" path="res://assets/npc/lab_assistant.tres" id="6_25vr2"]
 [ext_resource type="PackedScene" uid="uid://dp1i4wd3aukks" path="res://components/interactive_area_component.tscn" id="6_smwsq"]
+[ext_resource type="Resource" uid="uid://t18k1fufsaf0" path="res://dialogue/new_bark_town/elms_lab/professor_elm.dialogue" id="7_4fky6"]
+[ext_resource type="Resource" uid="uid://gh0axffa0yte" path="res://dialogue/new_bark_town/elms_lab/elms_assistant.dialogue" id="8_n16pu"]
+[ext_resource type="Resource" uid="uid://brvlsub7b1y03" path="res://dialogue/new_bark_town/elms_lab/difficult_bookshelf.dialogue" id="10_lojsv"]
+[ext_resource type="Resource" uid="uid://b263npm4dkb8k" path="res://dialogue/new_bark_town/elms_lab/trash.dialogue" id="11_kabuo"]
+[ext_resource type="Resource" uid="uid://c0fk8wfog3y7b" path="res://dialogue/new_bark_town/elms_lab/open_window.dialogue" id="12_1pw7u"]
+[ext_resource type="Resource" uid="uid://bfd171hykk1cm" path="res://dialogue/new_bark_town/elms_lab/reflection.dialogue" id="12_blf6c"]
 
 [node name="ElmsLab" type="Node2D"]
 
@@ -18,15 +24,17 @@ tile_set = ExtResource("1_fnno6")
 tile_map_data = PackedByteArray("AAAAAP7/AQAcAEAAAAAAAP//AQAcAEEAAAABAP7/AQAcAEAAAAABAP//AQAcAEEAAAACAP7/AQAcAEAAAAACAP//AQAcAEEAAAADAP7/AQAcAEAAAAADAP//AQAcAEEAAAAEAP7/AQAcAEAAAAAEAP//AQAcAEEAAAAFAP7/AQAcAEAAAAAFAP//AQAcAEEAAAAGAP7/AQAcAEAAAAAGAP//AQAcAEEAAAAHAP7/AQAcAEAAAAAHAP//AQAcAEEAAAAIAP7/AQAaAEAAAAAIAP//AQAaAEEAAAAJAP7/AQAbAEAAAAAJAP//AQAbAEEAAAAKAP7/AQAdAEAAAAAKAP//AQAdAEEAAAALAP7/AQAeAEAAAAALAP//AQAeAEEAAAAMAP7/AQAUAEAAAAAMAP//AQAUAEEAAAANAP7/AQAVAEAAAAANAP//AQAVAEEAAAAOAP7/AQAUAEAAAAAOAP//AQAUAEEAAAAPAP7/AQAVAEAAAAAPAP//AQAVAEEAAAAQAP7/AQAUAEAAAAAQAP//AQAUAEEAAAARAP7/AQAVAEAAAAARAP//AQAVAEEAAAASAP7/AQAUAEAAAAASAP//AQAUAEEAAAATAP7/AQAVAEAAAAATAP//AQAVAEEAAAASAAAAAQAUAEIAAAASAAEAAQAUAEMAAAATAAAAAQAVAEIAAAATAAEAAQAVAEMAAAAQAAAAAQAUAEIAAAAQAAEAAQAUAEMAAAARAAAAAQAVAEIAAAARAAEAAQAVAEMAAAAOAAAAAQAUAEIAAAAOAAEAAQAUAEMAAAAPAAAAAQAVAEIAAAAPAAEAAQAVAEMAAAAMAAAAAQAUAEIAAAAMAAEAAQAUAEMAAAANAAAAAQAVAEIAAAANAAEAAQAVAEMAAAAAAAAAAQAWAEIAAAAAAAEAAQAWAEMAAAAAAAIAAQAWAEQAAAAAAAMAAQAWAEUAAAABAAAAAQAXAEIAAAABAAEAAQAXAEMAAAABAAIAAQAXAEQAAAABAAMAAQAXAEUAAAACAAAAAQAYAEIAAAACAAEAAQAYAEMAAAACAAIAAQAYAEQAAAACAAMAAQAYAEUAAAADAAAAAQAZAEIAAAADAAEAAQAZAEMAAAADAAIAAQAZAEQAAAADAAMAAQAZAEUAAAAEAAAAAQAaAEIAAAAEAAEAAQAaAEMAAAAEAAIAAQAaAEQAAAAFAAAAAQAbAEIAAAAFAAEAAQAbAEMAAAAFAAIAAQAbAEQAAAAGAAAAAQAcAEIAAAAGAAEAAQAcAEMAAAAGAAIAAQAcAEQAAAAHAAAAAQAdAEIAAAAHAAEAAQAdAEMAAAAHAAIAAQAdAEQAAAAMAAQAAQAeAEIAAAAMAAUAAQAeAEMAAAANAAQAAQAfAEIAAAANAAUAAQAfAEMAAAAOAAQAAQAgAEIAAAAOAAUAAQAgAEMAAAAPAAQAAQAfAEIAAAAPAAUAAQAfAEMAAAAQAAQAAQAgAEIAAAAQAAUAAQAgAEMAAAARAAQAAQAhAEIAAAARAAUAAQAhAEMAAAASAAQAAQAiAEIAAAASAAUAAQAiAEMAAAATAAQAAQAjAEIAAAATAAUAAQAjAEMAAAAMAAYAAQAeAEQAAAANAAYAAQAfAEQAAAAOAAYAAQAgAEQAAAAQAAYAAQAgAEQAAAARAAYAAQAhAEQAAAAPAAYAAQAgAEQAAAAMAAoAAQAUAEAAAAAMAAsAAQAUAEEAAAAMAAwAAQAUAEIAAAAMAA0AAQAUAEMAAAANAAoAAQAVAEAAAAANAAsAAQAVAEEAAAANAAwAAQAVAEIAAAANAA0AAQAVAEMAAAAOAAoAAQAUAEAAAAAOAAsAAQAUAEEAAAAOAAwAAQAUAEIAAAAOAA0AAQAUAEMAAAAPAAoAAQAVAEAAAAAPAAsAAQAVAEEAAAAPAAwAAQAVAEIAAAAPAA0AAQAVAEMAAAAQAAoAAQAUAEAAAAAQAAsAAQAUAEEAAAAQAAwAAQAUAEIAAAAQAA0AAQAUAEMAAAARAAoAAQAVAEAAAAARAAsAAQAVAEEAAAARAAwAAQAVAEIAAAARAA0AAQAVAEMAAAASAAoAAQAUAEAAAAASAAsAAQAUAEEAAAASAAwAAQAUAEIAAAASAA0AAQAUAEMAAAATAAoAAQAVAEAAAAATAAsAAQAVAEEAAAATAAwAAQAVAEIAAAATAA0AAQAVAEMAAAAAAAoAAQAUAEAAAAAAAAsAAQAUAEEAAAAAAAwAAQAUAEIAAAAAAA0AAQAUAEMAAAABAAoAAQAVAEAAAAABAAsAAQAVAEEAAAABAAwAAQAVAEIAAAABAA0AAQAVAEMAAAACAAoAAQAUAEAAAAACAAsAAQAUAEEAAAACAAwAAQAUAEIAAAACAA0AAQAUAEMAAAADAAoAAQAVAEAAAAADAAsAAQAVAEEAAAADAAwAAQAVAEIAAAADAA0AAQAVAEMAAAAEAAoAAQAUAEAAAAAEAAsAAQAUAEEAAAAEAAwAAQAUAEIAAAAEAA0AAQAUAEMAAAAFAAoAAQAVAEAAAAAFAAsAAQAVAEEAAAAFAAwAAQAVAEIAAAAFAA0AAQAVAEMAAAAGAAoAAQAUAEAAAAAGAAsAAQAUAEEAAAAGAAwAAQAUAEIAAAAGAA0AAQAUAEMAAAAHAAoAAQAVAEAAAAAHAAsAAQAVAEEAAAAHAAwAAQAVAEIAAAAHAA0AAQAVAEMAAAAHABYAAQASAFAAAAAGABYAAQASAFAAAAAFABYAAQASAFAAAAAEABYAAQASAFAAAAADABYAAQASAFAAAAACABYAAQASAFAAAAABABYAAQASAFAAAAAAABYAAQASAFAAAAAMABYAAQASAFAAAAANABYAAQASAFAAAAAOABYAAQASAFAAAAAPABYAAQASAFAAAAAQABYAAQASAFAAAAARABYAAQASAFAAAAASABYAAQASAFAAAAATABYAAQASAFAAAAAUABYAAQASAFAAAAAUABUAAQASAFAAAAAUABQAAQASAFAAAAAUABMAAQASAFAAAAAUABIAAQASAFAAAAAUABEAAQASAFAAAAAUABAAAQASAFAAAAAUAA8AAQASAFAAAAAUAA4AAQASAFAAAAAUAA0AAQASAFAAAAAUAAwAAQASAFAAAAAUAAsAAQASAFAAAAAUAAoAAQASAFAAAAAUAAkAAQASAFAAAAAUAAgAAQASAFAAAAAUAAcAAQASAFAAAAAUAAYAAQASAFAAAAAUAAUAAQASAFAAAAAUAAQAAQASAFAAAAAUAAMAAQASAFAAAAAUAAIAAQASAFAAAAAUAAEAAQASAFAAAAAUAAAAAQASAFAAAAAUAP//AQASAFAAAAAUAP7/AQASAFAAAAAUAP3/AQASAFAAAAATAP3/AQASAFAAAAASAP3/AQASAFAAAAARAP3/AQASAFAAAAAQAP3/AQASAFAAAAAPAP3/AQASAFAAAAAOAP3/AQASAFAAAAANAP3/AQASAFAAAAAMAP3/AQASAFAAAAALAP3/AQASAFAAAAAKAP3/AQASAFAAAAAJAP3/AQASAFAAAAAIAP3/AQASAFAAAAAHAP3/AQASAFAAAAAGAP3/AQASAFAAAAD///3/AQASAFAAAAAAAP3/AQASAFAAAAABAP3/AQASAFAAAAACAP3/AQASAFAAAAADAP3/AQASAFAAAAAEAP3/AQASAFAAAAAFAP3/AQASAFAAAAD///7/AQASAFAAAAD/////AQASAFAAAAD//wAAAQASAFAAAAD//wEAAQASAFAAAAD//wIAAQASAFAAAAD//wMAAQASAFAAAAD//wQAAQASAFAAAAD//wUAAQASAFAAAAD//wYAAQASAFAAAAD//wcAAQASAFAAAAD//wgAAQASAFAAAAD//wkAAQASAFAAAAD//woAAQASAFAAAAD//wsAAQASAFAAAAD//wwAAQASAFAAAAD//w0AAQASAFAAAAD//w4AAQASAFAAAAD//w8AAQASAFAAAAD//xAAAQASAFAAAAD//xEAAQASAFAAAAD//xIAAQASAFAAAAD//xMAAQASAFAAAAD//xQAAQASAFAAAAD//xUAAQASAFAAAAD//xYAAQASAFAAAAA=")
 tile_set = ExtResource("2_s54pc")
 
-[node name="ElmsLab_NewBarkTown" parent="." instance=ExtResource("3_xuh4r")]
-position = Vector2(72, 183)
+[node name="ElmsLab_NewBarkTown3" parent="." instance=ExtResource("3_xuh4r")]
+position = Vector2(72, 177)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(80, 3)
+music_track_path = "res://assets/sound/background_music/new_bark_town.mp3"
 
-[node name="ElmsLab_NewBarkTown2" parent="." instance=ExtResource("3_xuh4r")]
-position = Vector2(88, 183)
+[node name="ElmsLab_NewBarkTown4" parent="." instance=ExtResource("3_xuh4r")]
+position = Vector2(88, 177)
 next_scene_path = "res://levels/new_bark_town.tscn"
 end_point_coordinates = Vector2(80, 3)
+music_track_path = "res://assets/sound/background_music/new_bark_town.mp3"
 
 [node name="Elm" parent="." instance=ExtResource("4_yubfd")]
 position = Vector2(88, 24)
@@ -34,7 +42,55 @@ spriteFrames = ExtResource("5_t2xv5")
 
 [node name="InteractiveAreaComponent" parent="Elm" instance=ExtResource("6_smwsq")]
 visible = false
+dialogue_resource = ExtResource("7_4fky6")
 
 [node name="LabAssistant" parent="." instance=ExtResource("4_yubfd")]
 position = Vector2(40, 135)
 spriteFrames = ExtResource("6_25vr2")
+
+[node name="InteractiveAreaComponent" parent="LabAssistant" instance=ExtResource("6_smwsq")]
+dialogue_resource = ExtResource("8_n16pu")
+
+[node name="InteractiveAreaComponent" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(104, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent2" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(120, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent3" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(136, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent4" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(152, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent5" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(56, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent6" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(40, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent7" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(24, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent8" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(8, 104)
+dialogue_resource = ExtResource("10_lojsv")
+
+[node name="InteractiveAreaComponent9" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(152, 40)
+dialogue_resource = ExtResource("11_kabuo")
+
+[node name="InteractiveAreaComponent10" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(88, -8)
+dialogue_resource = ExtResource("12_1pw7u")
+
+[node name="InteractiveAreaComponent11" parent="." instance=ExtResource("6_smwsq")]
+position = Vector2(72, -8)
+dialogue_resource = ExtResource("12_blf6c")

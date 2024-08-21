@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bfd171hykk1cm"
+path="res://.godot/imported/reflection.dialogue-9e94543dbd08baad0a5b76efbb3c7c1c.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/reflection.dialogue"
+dest_files=["res://.godot/imported/reflection.dialogue-9e94543dbd08baad0a5b76efbb3c7c1c.tres"]
+
+[params]
+
+defaults=true

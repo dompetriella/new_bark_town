@@ -1,10 +1,22 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://chqh3qqoysrf3"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://chqh3qqoysrf3"]
 
 [ext_resource type="Texture2D" uid="uid://b3hd186x8gicw" path="res://assets/pkmn_silver_characters.png" id="1_07k5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn3st"]
 atlas = ExtResource("1_07k5y")
 region = Rect2(26, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58ljb"]
+atlas = ExtResource("1_07k5y")
+region = Rect2(111, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq36r"]
+atlas = ExtResource("1_07k5y")
+region = Rect2(145, 238, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4k8f"]
+atlas = ExtResource("1_07k5y")
+region = Rect2(77, 238, 16, 16)
 
 [resource]
 animations = [{
@@ -14,5 +26,37 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn3st")
+}],
+"loop": true,
+"name": &"look_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58ljb")
+}],
+"loop": true,
+"name": &"look_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq36r")
+}],
+"loop": true,
+"name": &"look_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4k8f")
+}],
+"loop": true,
+"name": &"look_up",
 "speed": 5.0
 }]

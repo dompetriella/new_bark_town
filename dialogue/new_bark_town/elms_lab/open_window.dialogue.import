@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c0fk8wfog3y7b"
+path="res://.godot/imported/open_window.dialogue-68032a6ae2be1b9e4cadd113329e5295.tres"
+
+[deps]
+
+source_file="res://dialogue/new_bark_town/elms_lab/open_window.dialogue"
+dest_files=["res://.godot/imported/open_window.dialogue-68032a6ae2be1b9e4cadd113329e5295.tres"]
+
+[params]
+
+defaults=true
