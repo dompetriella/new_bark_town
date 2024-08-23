@@ -69,6 +69,7 @@ var dialogue_line: DialogueLine:
 			var time = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
 			await get_tree().create_timer(time).timeout
 			next(dialogue_line.next_id)
+			
 		else:
 			is_waiting_for_input = true
 			balloon.focus_mode = Control.FOCUS_ALL
@@ -112,6 +113,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 ## Go to the next line
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
+	Events.play_sfx.emit("res://assets/sound/sfx/SFX_PRESS_AB.wav");
 
 
 #region Signals
@@ -147,6 +149,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
+	Events.play_sfx.emit("res://assets/sound/sfx/SFX_PRESS_AB.wav");
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:

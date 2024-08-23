@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3jf08a2mhm1m"]
+[gd_scene load_steps=11 format=3 uid="uid://b3jf08a2mhm1m"]
 
 [ext_resource type="PackedScene" uid="uid://cnkywygy0dn7r" path="res://levels/player_bedroom_area.tscn" id="1_5qbtf"]
 [ext_resource type="Script" path="res://level_utility/level_container/level_container.gd" id="1_fm4k1"]
 [ext_resource type="PackedScene" uid="uid://8gu0gvdi85c" path="res://player/player.tscn" id="2_vovxr"]
 [ext_resource type="AudioStream" uid="uid://pboj40h8aqwa" path="res://assets/sound/background_music/new_bark_town.mp3" id="4_fqihe"]
-[ext_resource type="Script" path="res://background_music_player.gd" id="5_dwobu"]
+[ext_resource type="Script" path="res://sound/background_music_player.gd" id="5_dwobu"]
 [ext_resource type="Script" path="res://level_utility/transition_point/transition_animation_player.gd" id="5_hkxxm"]
+[ext_resource type="Script" path="res://sound/sfx_player.gd" id="6_p331k"]
 
 [sub_resource type="Animation" id="Animation_eqmqa"]
 length = 0.001
@@ -58,6 +59,9 @@ position = Vector2(16, 69)
 stream = ExtResource("4_fqihe")
 autoplay = true
 script = ExtResource("5_dwobu")
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("6_p331k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
