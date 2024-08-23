@@ -189,27 +189,33 @@ shape = SubResource("RectangleShape2D_xfy6x")
 [node name="InteractiveRaycastNorth" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(0, -16)
-collision_mask = 2
+collision_mask = 6
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InteractiveRaycastSouth" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(0, 16)
-collision_mask = 2
+collision_mask = 6
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InteractiveRaycastWest" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(-15, 0)
-collision_mask = 2
+collision_mask = 6
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InteractiveRaycastEast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(16, 0)
-collision_mask = 2
+collision_mask = 6
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="CollisionNoiseTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+
+[connection signal="timeout" from="CollisionNoiseTimer" to="." method="_on_collision_noise_timer_timeout"]

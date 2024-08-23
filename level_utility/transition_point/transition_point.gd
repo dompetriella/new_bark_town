@@ -1,3 +1,4 @@
+class_name TransitionPoint
 extends Area2D
 
 enum MovementDirection { DOWN, RIGHT, UP, LEFT}

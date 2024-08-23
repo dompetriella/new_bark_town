@@ -10,6 +10,7 @@ class_name Player
 @onready var interactive_raycast_east: RayCast2D = get_node("%InteractiveRaycastEast");
 @onready var interactive_raycast_west: RayCast2D = get_node("%InteractiveRaycastWest");
 @onready var player_sprite: AnimatedSprite2D = get_node("%PlayerSprite");
+@onready var collision_noise_timer: Timer = get_node("%CollisionNoiseTimer");
 
 const tile_size: int = 16;
 var is_moving: bool = false;
@@ -18,6 +19,7 @@ var is_autonomous: bool = true;
 var is_in_menu: bool = false;
 var input_direction: Vector2;
 var player_facing_raycast: RayCast2D;
+var can_emit_collide_noise: bool = true;
 
 func _ready() -> void:
 	Events.change_player_position.connect(change_player_position);
@@ -69,6 +71,7 @@ func _physics_process(delta: float) -> void:
 		var collider:  Node2D = player_facing_raycast.get_collider();
 		if (collider is InteractiveAreaComponent):
 			if (collider.dialogue_resource != null && !is_in_menu):
+				Events.play_sfx.emit("res://assets/sound/sfx/select_sfx.mp3");
 				is_in_menu = true;
 				if (collider.get_parent() is Npc):
 					var npc: Npc = collider.get_parent();
@@ -116,6 +119,12 @@ func move_character(input_direction: Vector2, player_sprite: AnimatedSprite2D, u
 			is_moving = false
 			movement_animation_uses_right_arm = !movement_animation_uses_right_arm;
 		);
+	elif (will_collide_with_physics_object(input_direction) && player_facing_raycast.get_collider() is not TransitionPoint):
+		if (self.can_emit_collide_noise):
+			Events.play_sfx.emit("res://assets/sound/sfx/player_collision.mp3");
+			self.can_emit_collide_noise = false;
+			collision_noise_timer.start();
+			
 
 	
 			
@@ -130,3 +139,7 @@ func will_collide_with_physics_object(input_direction: Vector2) -> bool:
 	if (input_direction == Vector2.LEFT && raycast_west.is_colliding()):
 		will_collide = true;
 	return will_collide;
+
+
+func _on_collision_noise_timer_timeout() -> void:
+	can_emit_collide_noise = true;
